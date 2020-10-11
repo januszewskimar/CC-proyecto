@@ -46,4 +46,4 @@ Los datos personales se configuran en la página de ajustes de GitHub. El result
 ## Configuración de la autenticación de dos factores
 
 La autenticación de dos factores se establece en la página de configuración de GitHub. He utilizado la opción del envío de mensajes de texto a mi número de móvil. El resultado se puede ver en la siguiente imagen:
-![Captura de pantalla autenticación de dos factores](/docs/imgs/semana-01/git-two-factor-auth.png?raw=true)
+![Captura de pantalla autenticación de dos factores](/docs/imgs/semana-01/github-two-factor-auth.png?raw=true)
