@@ -11,9 +11,9 @@ En la siguiente imagen se puede ver la clave agregada a GitHub:
 
 Para realizar la configuración de remotes, una vez situado en la carpeta del repositorio, ejecuté el siguiente comando:
 ```
-git remote add origin https://github.com/JJ/CC-20-21.git
+git remote add upstream https://github.com/JJ/CC-20-21.git
 ```
-La solución la encontré en [este tutorial](https://docs.github.com/es/free-pro-team@latest/github/using-git/adding-a-remote). 
+La solución la encontré en [aquí](https://github.com/JJ/CC-20-21/blob/master/objetivos/README.md). 
 
 ## Configuración de git local correcta: nombre, dirección de correo electrónico, configuración de rebase.
 
