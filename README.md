@@ -13,4 +13,4 @@ El sistema se desarrollará en la arquitectura basada en microservicios, ya que 
 Cada microservicio dispondrá de una base de datos separada para conseguir bajo acomplamiento. Los datos se almacenarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura.
 
 ## Enlaces a la documentación
-* [Hito 0](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/hito-1.md)
+* [Hito 0](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/hito-0.md)
