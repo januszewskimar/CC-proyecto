@@ -6,11 +6,11 @@ Hoy día hay muchas personas que desean realizar compras en línea. También exi
 
 ## Arquitectura
 El sistema se desarrollará en la arquitectura basada en microservicios, ya que esta permite que cada componente se despliegue de forma independiente. Gracias a este tipo de arquitectura, se consigue bajo acoplamiento y mejora la escalabilidad. Además, la depuración y el despliegue continuo son más fáciles de realizar. Habrá un módulo central que proporcionará una API basada en REST, puesto que es universal y no obliga a usar tecnologías específicas. Los microservicios se comunicarán de manera asíncrona mediante el modelo solicitud-respuesta, ya que es rápido y seguro. Se utilizarán interfaces REST. Se van a desarrollar los siguientes microservicios:
-* **Usuarios** - gestionará los datos de los usuarios
+* **Clientes** - gestionará los datos de los clientes
 * **Tiendas** - se encargará de gestionar los datos de las tiendas
-* **Opiniones** - a través de este se podrá consultar, añadir y modificar opiniones de los clientes y respuestas de las tiendas
+* **Opiniones** - a través de este se podrá añadir, modificar y eliminar opiniones de los clientes y respuestas de las tiendas
 
-Cada microservicio dispondrá de una base de datos separada para conseguir bajo acomplamiento. Los datos se almacenarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura.
+Cada microservicio dispondrá de una base de datos separada para conseguir bajo acomplamiento. Los datos se guardarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura.
 
 ## Herramientas
 
