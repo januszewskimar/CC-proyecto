@@ -1,0 +1,22 @@
+{
+  "name": "shop-safe",
+  "version": "1.0.0",
+  "description": "Sistema que permite publicar opiniones sobre tiendas en línea",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/januszewskimar/shop-safe.git"
+  },
+  "author": "Marcin Januszewski",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/januszewskimar/shop-safe/issues"
+  },
+  "homepage": "https://github.com/januszewskimar/shop-safe#readme"
+}
