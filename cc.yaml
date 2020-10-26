@@ -1,0 +1,3 @@
+entidad:
+ - src/clientes/Cliente.js
+ - src/tiendas/Tienda.js
