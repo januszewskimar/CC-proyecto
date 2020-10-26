@@ -1,11 +1,11 @@
-# Documentación de los pasos realizados en el primer hito
+# Documentación de los pasos realizados para la configuración de git y GitHub
 
 ## Creación de par clave pública/privada SSH
 
 Para crear la clave pública/privada seguí [este tutorial](https://docs.github.com/es/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 En la siguiente imagen se puede ver la clave agregada a GitHub:
-![Captura de pantalla de GitHub SSH](imgs/hito-0/github-ssh.png)
+![Captura de pantalla de GitHub SSH](imgs/config-git-github/github-ssh.png)
 
 ## Configuración de los remotes correcto para repositorio CC-20-21.
 
@@ -35,15 +35,15 @@ git config --global pull.rebase true
 ```
 
 Usando el comando `git config --list --global` se pueden ver los ajustes establecidos.
-![Captura de pantalla ajustes de git](imgs/hito-0/git-config.png)
+![Captura de pantalla ajustes de git](imgs/config-git-github/git-config.png)
 
 ## Configuración de los datos personales en GitHub
 
 Los datos personales se configuran en la página de ajustes de GitHub. El resultado está reflejado en la imagen de abajo:
-![Captura de pantalla ajustes datos personales GitHub](imgs/hito-0/github-personal-data.png)
+![Captura de pantalla ajustes datos personales GitHub](imgs/config-git-github/github-personal-data.png)
 
 
 ## Configuración de la autenticación de dos factores
 
 La autenticación de dos factores se establece en la página de configuración de GitHub. He utilizado la opción del envío de mensajes de texto a mi número de móvil. El resultado se puede ver en la siguiente imagen:
-![Captura de pantalla autenticación de dos factores](imgs/hito-0/github-two-factor-auth.png)
+![Captura de pantalla autenticación de dos factores](imgs/config-git-github/github-two-factor-auth.png)

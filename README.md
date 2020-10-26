@@ -27,4 +27,4 @@ Para realizar test utilizaré Mocha, ya que es gratuito, se integra de forma fá
 Para las tareas de la integración continua, he optado por Travis, puesto que soporta JavaScript con Node.js y se integra con repositorios de GitHub. Es gratuito para proyectos de código abierto. 
 
 ## Enlaces a la documentación
-* [Hito 0](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/hito-0.md)
+* [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
