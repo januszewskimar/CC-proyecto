@@ -35,7 +35,7 @@ class Cliente{
 	}
 	
 	getContrasenia(){
-		return this.contrasenia
+		return this.contrasenia;
 	}
 	
 	setContrasenia(contrasenia){
