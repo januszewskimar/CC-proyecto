@@ -26,5 +26,43 @@ Para realizar test utilizaré Mocha, ya que es gratuito, se integra de forma fá
 ### Integración continua
 Para las tareas de la integración continua, he optado por Travis, puesto que soporta JavaScript con Node.js y se integra con repositorios de GitHub. Es gratuito para proyectos de código abierto. 
 
+## Historias de usuario
+* [[HU1] Como cliente, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7)
+* [[HU2] Como cliente, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
+* [[HU3] Como cliente, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
+* [[HU4] Como cliente, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
+* [[HU5] Como cliente, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
+* [[HU6] Como cliente, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
+* [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13)
+* [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
+* [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
+* [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/16)
+
+## Planificación
+Las historias de usuario se han planificado por milestones. Cada historia de usuario contiene tareas.
+
+- [Milestone 2](https://github.com/januszewskimar/shop-safe/milestone/2)
+  - [[HU1] Como cliente, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7)
+  - [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13)
+- [Milestone 3](https://github.com/januszewskimar/shop-safe/milestone/3)
+  - [[HU2] Como cliente, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
+  - [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
+- [Milestone 4](https://github.com/januszewskimar/shop-safe/milestone/4)
+  - [[HU5] Como cliente, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
+  - [[HU6] Como cliente, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
+- [Milestone 5](https://github.com/januszewskimar/shop-safe/milestone/5)
+  - [[HU3] Como cliente, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
+  - [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
+- [Milestone 6](https://github.com/januszewskimar/shop-safe/milestone/6)
+  - [[HU4] Como cliente, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
+  - [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/16)
+
+Además, se ha creado un [tablero ágil](https://github.com/januszewskimar/shop-safe/projects/1).
+
+## Clases iniciales
+Se han creado las siguientes clases:
+* [Cliente.js](https://github.com/januszewskimar/shop-safe/blob/main/src/clientes/Cliente.js)
+* [Tienda.js](https://github.com/januszewskimar/shop-safe/blob/main/src/tiendas/Tienda.js)
+
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
