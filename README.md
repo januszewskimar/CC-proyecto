@@ -27,12 +27,12 @@ Para realizar test utilizaré Mocha, ya que se integra de forma fácil con Node.
 Para las tareas de la integración continua, he optado por Travis, puesto que soporta JavaScript con Node.js y se integra con repositorios de GitHub. Es gratuito para proyectos de código abierto. 
 
 ## Historias de usuario
-* [[HU1] Como cliente, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7)
-* [[HU2] Como cliente, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
-* [[HU3] Como cliente, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
-* [[HU4] Como cliente, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
-* [[HU5] Como cliente, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
-* [[HU6] Como cliente, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
+* [[HU1] Como usuario, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7)
+* [[HU2] Como usuario, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
+* [[HU3] Como usuario, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
+* [[HU4] Como usuario, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
+* [[HU5] Como usuario, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
+* [[HU6] Como usuario, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
 * [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13)
 * [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
 * [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
@@ -41,21 +41,33 @@ Para las tareas de la integración continua, he optado por Travis, puesto que so
 ## Planificación
 Las historias de usuario se han planificado por milestones. Cada historia de usuario contiene tareas.
 
-- [Milestone 2](https://github.com/januszewskimar/shop-safe/milestone/2)
-  - [[HU1] Como cliente, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7)
-  - [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13)
-- [Milestone 3](https://github.com/januszewskimar/shop-safe/milestone/3)
-  - [[HU2] Como cliente, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
-  - [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
-- [Milestone 4](https://github.com/januszewskimar/shop-safe/milestone/4)
-  - [[HU5] Como cliente, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
-  - [[HU6] Como cliente, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
-- [Milestone 5](https://github.com/januszewskimar/shop-safe/milestone/5)
-  - [[HU3] Como cliente, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
-  - [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
-- [Milestone 6](https://github.com/januszewskimar/shop-safe/milestone/6)
-  - [[HU4] Como cliente, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
-  - [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/16)
+### Milestone 1
+En el primer milestone se ha decidido desarrollar las funcionalidades de añadir y ver las opiniones sobre una tienda. Se ha identificado a Opinión como la entidad central, por lo cual las historias de usuario relacionadas con esta se desarrollarán primero:
+* [[HU2] Como usuario, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
+* [[HU5] Como usuario, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
+
+Sin embargo, para poder implementarlas es necesario haber finalizado otras:
+* [[HU1] Como usuario, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7) - antes de añadir una opinión, el usuario tiene que haberse registrado
+* [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13) - la tienda tiene que estar registrada en el sistema para poder añadir una opinión sobre ella
+
+Primero se desarrollarán las clases iniciales:
+* de la entidad central (Opinión)
+* y las relacionadas con esta (Usuario y Tienda)
+
+Después se procederá a realizar las siguientes tareas de las historias de usuario.
+Una vez terminadas estas historias de usuario (la parte de back end), se podrán implementar las que quedan. Ya no dependerá ninguna de otra a partir de este momento y se podrán implementar en cualquier orden.
+
+### Milestone 2
+En este milestone se va a ampliar la funcionalidad. Las tiendas podrán responder a las opiniones de los usuarios que es una funcionalidad muy importante. Además, se podrá ver la valoración media de de las opiniones de una tienda y eliminar una opinión y una respuesta a una opinión. Se ha decidido implementar las funciones de eliminación antes de las de modificación, ya que en caso de necesitar editar una opinión, esta se puede eliminar y se puede publicar una nueva. Sin embargo, si se quisiera implementar primero la opción de modificación, sería imposible eliminar una opinión.
+* [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
+* [[HU6] Como usuario, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
+* [[HU4] Como usuario, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
+* [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/16)
+
+### Milestone 3
+En este milestone se van a implementar las funcionalidades de modificar una opinión y una respuesta a una opinión para proveer todas las opciones de gestión de opiniones planeadas en las historias de usuario.
+* [[HU3] Como usuario, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
+* [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
 
 Además, se ha creado un [tablero ágil](https://github.com/januszewskimar/shop-safe/projects/1).
 
