@@ -5,7 +5,7 @@ Repositorio con el proyecto realizado en la asignatura Cloud Computing del Mást
 Hoy día hay muchas personas que desean realizar compras en línea. También existe una gran cantidad de tiendas cuya fiabilidad desconocen. Los usuarios quisieran conocer las opiniones de otras personas que ya han realizado compras en una determinada tienda para saber si esta es de fiar. Por otro lado, las tiendas quisieran poder defenderse públicamente y solicitar más información a los clientes con el fin de mejorar el servicio. Se desea desarrollar un sistema que permita a los clientes leer y publicar opiniones sobre tiendas y que las tiendas puedan responder a dichas opiniones.
 
 ## Arquitectura
-El sistema se desarrollará en la arquitectura basada en microservicios, ya que se quiere desarrollar módulos independientes para conseguir bajo acoplamiento y mejorar la escalabilidad. Los usuarios se comunicarán con la puerta de enlace API, que enviará peticiones a los microservicios correspondientes. La comunicación será asíncrona mediante el modelo solicitud-respuesta, ya que es rápida y segura. Se utilizarán API basadas en REST tanto para la puerta de enlace como para los microserivicos, puesto que es universal y no obliga a usar tecnologías específicas. Cada microservicio dispondrá de una base de datos separada para conseguir bajo acoplamiento. Los datos se guardarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura. Se van a desarrollar los siguientes microservicios:
+El sistema se desarrollará en la arquitectura basada en microservicios, ya que se quiere desarrollar módulos independientes para conseguir bajo acoplamiento y mejorar la escalabilidad. Los usuarios se comunicarán con la puerta de enlace API, que enviará peticiones a los microservicios correspondientes. La comunicación será asíncrona mediante el modelo solicitud-respuesta, ya que es rápida y segura. Se utilizarán API basadas en REST tanto para la puerta de enlace como para los microserivicos, puesto que son universales y no obligan a usar tecnologías específicas. Cada microservicio dispondrá de una base de datos separada para conseguir bajo acoplamiento. Los datos se guardarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura. Se van a desarrollar los siguientes microservicios:
 
 * **Usuarios** - gestionará los datos de los usuarios, es decir, personas particulares que pueden publicar opiniones sobre tiendas.
 * **Administradores de Tiendas** - va a gestionar los datos de los administradores de tiendas.
@@ -46,7 +46,7 @@ En el primer milestone se ha decidido desarrollar las funcionalidades de añadir
 * [[HU2] Como usuario, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
 * [[HU5] Como usuario, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
 
-Sin embargo, para poder implementarlas es necesario haber finalizado otras:
+Sin embargo, para poder implementarlas es necesario haber finalizado las siguientes:
 * [[HU1] Como usuario, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7) - antes de añadir una opinión, el usuario tiene que haberse registrado
 * [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13) - la tienda tiene que estar registrada en el sistema para poder añadir una opinión sobre ella
 
@@ -68,7 +68,7 @@ Lista de historias de usuario:
 * [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/16)
 
 ### Milestone 3
-En este milestone se van a implementar las funcionalidades de modificar una opinión y una respuesta a una opinión para proveer todas las opciones de gestión de opiniones planeadas en las historias de usuario.
+En este milestone se van a implementar las funcionalidades de modificar una opinión y una respuesta a una opinión para tener todas las opciones de gestión de opiniones planeadas en las historias de usuario.
 
 Lista de historias de usuario:
 * [[HU3] Como usuario, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
