@@ -5,12 +5,12 @@ Repositorio con el proyecto realizado en la asignatura Cloud Computing del Mást
 Hoy día hay muchas personas que desean realizar compras en línea. También existe una gran cantidad de tiendas cuya fiabilidad desconocen. Los usuarios quisieran conocer las opiniones de otras personas que ya han realizado compras en una determinada tienda para saber si esta es de fiar. Por otro lado, las tiendas quisieran poder defenderse públicamente y solicitar más información a los clientes con el fin de mejorar el servicio. Se desea desarrollar un sistema que permita a los clientes leer y publicar opiniones sobre tiendas y que las tiendas puedan responder a dichas opiniones.
 
 ## Arquitectura
-El sistema se desarrollará en la arquitectura basada en microservicios, ya que se quiere desarrollar módulos independientes para conseguir bajo acoplamiento y mejorar la escalabilidad. Los usuarios se comunicarán con la puerta de enlace API que enviará peticiones a los microservicios correspondientes. La comunicación será asíncrona mediante el modelo solicitud-respuesta, ya que es rápido y seguro. Se utilizarán API basadas en REST tanto para la puerta de enlace como para los microserivicos, puesto que es universal y no obliga a usar tecnologías específicas. Cada microservicio dispondrá de una base de datos separada para conseguir bajo acoplamiento. Los datos se guardarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura. Se van a desarrollar los siguientes microservicios:
+El sistema se desarrollará en la arquitectura basada en microservicios, ya que se quiere desarrollar módulos independientes para conseguir bajo acoplamiento y mejorar la escalabilidad. Los usuarios se comunicarán con la puerta de enlace API, que enviará peticiones a los microservicios correspondientes. La comunicación será asíncrona mediante el modelo solicitud-respuesta, ya que es rápida y segura. Se utilizarán API basadas en REST tanto para la puerta de enlace como para los microserivicos, puesto que es universal y no obliga a usar tecnologías específicas. Cada microservicio dispondrá de una base de datos separada para conseguir bajo acoplamiento. Los datos se guardarán en almacenes relacionales, ya que en este caso se conoce de antemano su estructura. Se van a desarrollar los siguientes microservicios:
 
 * **Usuarios** - gestionará los datos de los usuarios, es decir, personas particulares que pueden publicar opiniones sobre tiendas.
-* **Administradores** - va a gestionar los datos de los administradores de tiendas.
+* **Administradores de Tiendas** - va a gestionar los datos de los administradores de tiendas.
 * **Tiendas** - se encargará de gestionar los datos de las tiendas.
-* **Opiniones** - a través de este se podrá añadir, modificar y eliminar opiniones de los clientes y respuestas de las tiendas.
+* **Opiniones** - a través de este se podrá añadir, modificar y eliminar opiniones de los usuarios y respuestas de las tiendas.
 
 ## Herramientas
 
@@ -33,10 +33,10 @@ Para las tareas de la integración continua, he optado por Travis, puesto que so
 * [[HU4] Como usuario, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
 * [[HU5] Como usuario, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
 * [[HU6] Como usuario, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
-* [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13)
-* [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
-* [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
-* [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/16)
+* [[HU7] Como administrador de una tienda, quiero registrarla en el sistema](https://github.com/januszewskimar/shop-safe/issues/13)
+* [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un usuario](https://github.com/januszewskimar/shop-safe/issues/14)
+* [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un usuario](https://github.com/januszewskimar/shop-safe/issues/15)
+* [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un usuario](https://github.com/januszewskimar/shop-safe/issues/16)
 
 ## Planificación
 Las historias de usuario se han planificado por milestones. Cada historia de usuario contiene tareas.
@@ -51,14 +51,17 @@ Sin embargo, para poder implementarlas es necesario haber finalizado otras:
 * [[HU7] Como administrador de una tienda, quiero registrarla al sistema](https://github.com/januszewskimar/shop-safe/issues/13) - la tienda tiene que estar registrada en el sistema para poder añadir una opinión sobre ella
 
 Primero se desarrollarán las clases iniciales:
-* de la entidad central (Opinión)
-* y las relacionadas con esta (Usuario y Tienda)
+* Usuario
+* AdministradorTienda
+* Tienda
+* Opinión
 
-Después se procederá a realizar las siguientes tareas de las historias de usuario.
 Una vez terminadas estas historias de usuario (la parte de back end), se podrán implementar las que quedan. Ya no dependerá ninguna de otra a partir de este momento y se podrán implementar en cualquier orden.
 
 ### Milestone 2
-En este milestone se va a ampliar la funcionalidad. Las tiendas podrán responder a las opiniones de los usuarios que es una funcionalidad muy importante. Además, se podrá ver la valoración media de de las opiniones de una tienda y eliminar una opinión y una respuesta a una opinión. Se ha decidido implementar las funciones de eliminación antes de las de modificación, ya que en caso de necesitar editar una opinión, esta se puede eliminar y se puede publicar una nueva. Sin embargo, si se quisiera implementar primero la opción de modificación, sería imposible eliminar una opinión.
+En este milestone se va a ampliar la funcionalidad. Las tiendas podrán responder a las opiniones de los usuarios, que es una funcionalidad muy importante. Además, se podrá ver la valoración media de de las opiniones de una tienda y eliminar una opinión y una respuesta a una opinión. Se ha decidido implementar las funciones de eliminación antes de las de modificación, ya que en caso de necesitar editar una opinión, esta se puede eliminar y se puede publicar una nueva. Sin embargo, si se quisiera implementar primero la opción de modificación, sería imposible eliminar una opinión.
+
+Lista de historias de usuario:
 * [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/14)
 * [[HU6] Como usuario, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
 * [[HU4] Como usuario, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
@@ -66,6 +69,8 @@ En este milestone se va a ampliar la funcionalidad. Las tiendas podrán responde
 
 ### Milestone 3
 En este milestone se van a implementar las funcionalidades de modificar una opinión y una respuesta a una opinión para proveer todas las opciones de gestión de opiniones planeadas en las historias de usuario.
+
+Lista de historias de usuario:
 * [[HU3] Como usuario, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
 * [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un cliente](https://github.com/januszewskimar/shop-safe/issues/15)
 
@@ -81,7 +86,6 @@ Se han creado las siguientes clases:
 En la siguiente imagen se demuestra que las clases son sintácticamente correctas.
 
 ![Compilación de las clases iniciales](/docs/imgs/compilacion-clases-iniciales.png)
-
 
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
