@@ -73,8 +73,15 @@ Además, se ha creado un [tablero ágil](https://github.com/januszewskimar/shop-
 
 ## Clases iniciales
 Se han creado las siguientes clases:
-* [Cliente.js](https://github.com/januszewskimar/shop-safe/blob/main/src/clientes/Cliente.js)
-* [Tienda.js](https://github.com/januszewskimar/shop-safe/blob/main/src/tiendas/Tienda.js)
+* [AdministradorTienda.js](/src/AdministradorTienda.ts)
+* [Tienda.js](/src/Tienda.js)
+* [Usuario.js](/src/Usuario.js)
+* [Opinion.js](/src/Opinion.js)
+
+En la siguiente imagen se demuestra que las clases son sintácticamente correctas.
+
+![Compilación de las clases iniciales](/docs/imgs/compilacion-clases-iniciales.png)
+
 
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
