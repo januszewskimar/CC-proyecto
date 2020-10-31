@@ -73,9 +73,9 @@ Además, se ha creado un [tablero ágil](https://github.com/januszewskimar/shop-
 
 ## Clases iniciales
 Se han creado las siguientes clases:
+* [Usuario.ts](/src/Usuario.ts)
 * [AdministradorTienda.ts](/src/AdministradorTienda.ts)
 * [Tienda.ts](/src/Tienda.ts)
-* [Usuario.ts](/src/Usuario.ts)
 * [Opinion.ts](/src/Opinion.ts)
 
 En la siguiente imagen se demuestra que las clases son sintácticamente correctas.
