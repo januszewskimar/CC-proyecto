@@ -3,3 +3,4 @@ entidad:
  - src/Opinion.ts
  - src/Tienda.ts
  - src/Usuario.ts
+ 
