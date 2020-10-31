@@ -1,11 +1,11 @@
 import { Tienda } from "./Tienda";
 
 export class AdministradorTienda{
-	nombreUsuario: string;
-	correo: string;
-	nombre: string;
-	apellidos: string;
-	tienda: Tienda;
+	private nombreUsuario: string;
+	private correo: string;
+	private nombre: string;
+	private apellidos: string;
+	private tienda: Tienda;
 	
 	constructor (nombreUsuario: string, correo: string, nombre: string, apellidos: string){
 		this.nombreUsuario = nombreUsuario;
