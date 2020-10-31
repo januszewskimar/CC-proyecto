@@ -2,11 +2,11 @@ import { AdministradorTienda } from "./AdministradorTienda";
 import { Opinion } from "./Opinion";
 
 export class Tienda{
-	nombreTienda: string;
-	direccion: string;
-	telefono: string;
-	administrador: AdministradorTienda;
-	opiniones: Opinion[]
+	private nombreTienda: string;
+	private direccion: string;
+	private telefono: string;
+	private administrador: AdministradorTienda;
+	private opiniones: Opinion[]
 	
 	constructor (nombreTienda: string, direccion: string, telefono: string, administrador: AdministradorTienda){
 		this.nombreTienda = nombreTienda;
