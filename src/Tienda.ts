@@ -18,4 +18,8 @@ export class Tienda{
 	aniadirOpinion(opinion: Opinion){
 		this.opiniones.push(opinion);
 	}
+	
+	getOpiniones() : Opinion[] {
+		return this.opiniones;
+	}
 }
