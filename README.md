@@ -87,5 +87,9 @@ En la siguiente imagen se demuestra que las clases son sintácticamente correcta
 
 ![Compilación de las clases iniciales](/docs/imgs/compilacion-clases-iniciales.png)
 
+## Selección del gestor de tareas
+
+Para JavaScript existen dos gestores de tareas principales - Grunt y Gulp. He optado por Grunt, ya que es más fácil y tiene una comunidad de usuarios más grande, por lo cual, se puede solucionar problemas más rápidamente. Cabe destacar que Grunt es mejor para proyectos pequeños y Gulp para proyectos más grandes. Grunt es más lento que Gulp, ya que usa ficheros intermedios y el otro realiza todas las operaciones en la RAM. Sin embargo, por todas las características anteriores, he elegido Grunt.
+
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
