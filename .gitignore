@@ -1,3 +1,4 @@
 src/*.js
 *.js
 *.map
+node_modules
