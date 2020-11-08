@@ -1,4 +1,3 @@
 src/*.js
-*.js
-*.map
+src/*.map
 node_modules
