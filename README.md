@@ -93,7 +93,7 @@ Para JavaScript existen dos gestores de tareas principales - Grunt y Gulp. He op
 
 ## Selección de la biblioteca de aserciones
 
-Para JavaScript existen varias bibliotecas de aserciones como Chai, Must.js o Should.js. En biblioteca estándar de JavaScript existe una biblioteca para aserciones y esta es la que se va a utilizar, ya que no requiere la instalación de módulos adicionales.
+Para JavaScript existen varias bibliotecas de aserciones como Chai, Must.js o Should.js. En biblioteca estándar de JavaScript también existe una biblioteca de aserciones. He optado por Chai, puesto que es intuitiva pudiendo utilizarse comandos como assert, expect o should para especificar aserciones.
 
 ## Selección del marco de pruebas
 
