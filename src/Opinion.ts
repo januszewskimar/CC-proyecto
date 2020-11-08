@@ -12,7 +12,35 @@ export class Opinion{
 		this.tienda = tienda;
 		this.usuario = usuario;
 		this.titulo = titulo;
-		this.valoracionNumerica = valoracionNumerica;
+		this.setValoracionNumerica(valoracionNumerica);
 		this.descripcion = descripcion;
+	}
+	
+	setValoracionNumerica(valoracionNumerica: number){
+		if (valoracionNumerica % 1 != 0 || valoracionNumerica < 1 || valoracionNumerica > 5){
+			throw Error('Valoracion numerica incorrecta');
+		}
+		
+		this.valoracionNumerica = valoracionNumerica;
+	}
+	
+	getTienda(){
+		return this.tienda;
+	}
+	
+	getUsuario(){
+		return this.tienda;
+	}
+	
+	getTitulo(){
+		return this.titulo;
+	}
+	
+	getValoracionNumerica(){
+		return this.valoracionNumerica;
+	}
+	
+	getDescripcion(){
+		return this.descripcion;
 	}
 }
