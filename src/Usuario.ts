@@ -1,3 +1,5 @@
+import { ValidacionDatos } from './ValidacionDatos';
+
 export class Usuario{
 	private nombreUsuario: string;
 	private correo: string;
@@ -12,38 +14,19 @@ export class Usuario{
 	}
 	
 	setCorreo (correo: string){
-		if (correo.length < 3){
-			throw Error("Correo incorrecto");
-		}
-		
-		let numArrobas: number = 0;
-		for (let i:number = 0 ; i < correo.length ; i++){
-			if (correo[i] == '@'){
-				numArrobas++;
-			}
-			if (correo[i] == ' '){
-				throw Error("Correo incorrecto");
-			}
-		}
-		if (numArrobas != 1 || correo[0] == '@' || correo[correo.length-1] == '@'){
+		if (!ValidacionDatos.esCorrectoCorreo(correo)){
 			throw Error("Correo incorrecto");
 		}
 		
 		this.correo = correo;
 	}
 	
-	setNombreUsuario (nombreUsuario: string){
-		if (nombreUsuario.length < 1){
+	setNombreUsuario (nom: string){
+		if (!ValidacionDatos.esCorrectoNombreUsuario(nom)){
 			throw Error("Nombre de usuario incorrecto");
 		}
 		
-		for (let i:number = 0 ; i < nombreUsuario.length ; i++){
-			if (nombreUsuario[i] == ' '){
-				throw Error("Nombre de usuario incorrecto");
-			}
-		}
-		
-		this.nombreUsuario = nombreUsuario;
+		this.nombreUsuario = nom;
 	}
 	
 	getNombreUsuario(){
