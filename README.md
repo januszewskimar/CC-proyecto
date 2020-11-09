@@ -109,12 +109,14 @@ Los marcos de pruebas para JavaScript más populares son Mocha y Jasmine. Las do
 * [AdministradorTienda.ts](/src/AdministradorTienda.ts)
 * [Tienda.ts](/src/Tienda.ts)
 * [Opinion.ts](/src/Opinion.ts)
+* [ControladorOpiniones.ts](/src/ControladorOpiniones.ts)
 
 Tests para estas clases:
 * [Usuario.ts](/src/test/Usuario.ts)
 * [AdministradorTienda.ts](/src/test/AdministradorTienda.ts)
 * [Tienda.ts](/src/test/Tienda.ts)
 * [Opinion.ts](/src/test/Opinion.ts)
+* [ControladorOpiniones.ts](/src/test/ControladorOpiniones.ts)
 
 ## Cómo compilar el proyecto y ejecutar los test
 
