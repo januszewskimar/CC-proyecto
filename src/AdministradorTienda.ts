@@ -1,4 +1,5 @@
 import { Tienda } from "./Tienda";
+import { ValidacionDatos } from "./ValidacionDatos";
 
 export class AdministradorTienda{
 	private nombreUsuario: string;
@@ -16,37 +17,18 @@ export class AdministradorTienda{
 	}
 	
 	setCorreo (correo: string){
-		if (correo.length < 3){
-			throw Error("Correo incorrecto");
-		}
-		
-		let numArrobas: number = 0;
-		for (let i:number = 0 ; i < correo.length ; i++){
-			if (correo[i] == '@'){
-				numArrobas++;
-			}
-			if (correo[i] == ' '){
-				throw Error("Correo incorrecto");
-			}
-		}
-		if (numArrobas != 1 || correo[0] == '@' || correo[correo.length-1] == '@'){
-			throw Error("Correo incorrecto");
+		if (!ValidacionDatos.esCorrectoCorreo(correo)){
+			throw Error('Correo incorrecto');
 		}
 		
 		this.correo = correo;
 	}
 	
 	setNombreUsuario (nombreUsuario: string){
-		if (nombreUsuario.length < 1){
+		if (!ValidacionDatos.esCorrectoNombreUsuario(nombreUsuario)){
 			throw Error("Nombre de usuario incorrecto");
 		}
-		
-		for (let i:number = 0 ; i < nombreUsuario.length ; i++){
-			if (nombreUsuario[i] == ' '){
-				throw Error("Nombre de usuario incorrecto");
-			}
-		}
-		
+
 		this.nombreUsuario = nombreUsuario;
 	}
 	
