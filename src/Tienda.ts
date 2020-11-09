@@ -1,5 +1,6 @@
 import { AdministradorTienda } from "./AdministradorTienda";
 import { Opinion } from "./Opinion";
+import { ValidacionDatos } from "./ValidacionDatos";
 
 export class Tienda{
 	private nombre: string;
@@ -24,31 +25,8 @@ export class Tienda{
 	}
 	
 	setTelefono(telefono: string) {
-		let i = 0;
-		let tlf;
-		if (telefono[0] == '+'){
-			i = 1;
-			if (telefono.length < 2){
-				throw Error("Telefono incorrecto");
-			}
-			tlf = telefono.substring(1);
-		}
-		else{
-			i = 0;
-			if (telefono.length < 1){
-				throw Error("Telefono incorrecto");
-			}
-			tlf = telefono;
-		}
-		
-		let num = Number(tlf);
-		
-		if (num == NaN){
-			throw Error("Telefono incorrecto");
-		}
-		
-		if (num % 1 != 0){
-			throw Error("Telefono incorrecto");
+		if (!ValidacionDatos.esCorrectoTelefono(telefono)){
+			throw Error('Telefono incorrecto');
 		}
 		
 		this.telefono = telefono;
