@@ -5,10 +5,10 @@ entidad:
   - src/Opinion.ts
   - src/Tienda.ts
   - src/Usuario.ts
- test:
+test:
   - src/test/AdministradorTienda.ts
   - src/test/Opinion.ts
   - src/test/Tienda.ts
   - src/test/Usuario.ts
- fichero_tareas: Gruntfile.js
+fichero_tareas: Gruntfile.js
 
