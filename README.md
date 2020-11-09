@@ -103,5 +103,18 @@ Para JavaScript existen varias bibliotecas de aserciones como Chai, Must.js o Sh
 
 Los marcos de pruebas para JavaScript más populares son Mocha y Jasmine. Las dos herramientas son muy similares pero he elegido Mocha, ya que es más popular. Ambas se integran fácilmente con Node.js y permiten el testeo asíncrono. Las dos herramientas permiten realizar el TDD pero en Mocha es más fácil el BDD. Jasmine contiene una biblioteca de aserciones y Mocha no, por lo cual, es necesario instalar una o usar la estándar de JavaScript (en este caso no supone un problema).
 
+## Ficheros desarrollados
+
+* [Usuario.ts](/src/Usuario.ts)
+* [AdministradorTienda.ts](/src/AdministradorTienda.ts)
+* [Tienda.ts](/src/Tienda.ts)
+* [Opinion.ts](/src/Opinion.ts)
+
+Tests para estas clases:
+* [Usuario.ts](/src/test/Usuario.ts)
+* [AdministradorTienda.ts](/src/test/AdministradorTienda.ts)
+* [Tienda.ts](/src/test/Tienda.ts)
+* [Opinion.ts](/src/test/Opinion.ts)
+
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
