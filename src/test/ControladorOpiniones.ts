@@ -1,21 +1,21 @@
 import 'mocha';
-import  {OpinionesControlador} from '../OpinionesControlador';
+import  {ControladorOpiniones} from '../ControladorOpiniones';
 import  {AdministradorTienda} from '../AdministradorTienda';
 import  {Tienda} from '../Tienda'; 
 import  {Usuario} from '../Usuario';
 import  {Opinion} from '../Opinion';
 import {expect} from 'chai';
 
-describe('OpinionesControlador', function(){
+describe('ControladorOpiniones', function(){
 	describe('Carga', function(){
 		it ('Debería cargar',function(){
-			expect(OpinionesControlador, 'Cargado');
+			expect(ControladorOpiniones, 'Cargado');
 		})
 	})
 	
 	describe('Devolver opiniones de una tienda determinada', function(){
 		it('Devuelve opiniones correctas', function(){
-			let controlador = new OpinionesControlador();
+			let controlador = new ControladorOpiniones();
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);

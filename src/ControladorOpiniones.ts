@@ -1,7 +1,7 @@
 import { Opinion } from './Opinion';
 import { Tienda } from './Tienda';
 
-export class OpinionesControlador{
+export class ControladorOpiniones{
 	private opiniones: Opinion[] = [];
 	
 	constructor(){
