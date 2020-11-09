@@ -93,7 +93,7 @@ Para JavaScript existen dos gestores de tareas principales - Grunt y Gulp. He op
 
 ## Configuración del gestor de tareas
 
-Se ha configurado Grunt para que al ejecutarlo sin parámetros (`grunt`) compile los ficheros y ejecute los test. Lo mismo se alcanza ejecutando grunt test. Si se quiere compilar los ficheros sin ejecutar los test, se ejecuta `grunt compile`. La configuración se encuentra en [este fichero](Gruntfile.js);
+Se ha configurado Grunt para que al ejecutarlo sin parámetros (`grunt`) compile los ficheros y ejecute los test. Lo mismo se alcanza ejecutando grunt test. Si se quiere compilar los ficheros sin ejecutar los test, se ejecuta `grunt compile`. La configuración se encuentra en [este fichero](Gruntfile.js).
 
 ## Selección de la biblioteca de aserciones
 
