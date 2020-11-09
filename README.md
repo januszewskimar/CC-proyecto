@@ -116,5 +116,11 @@ Tests para estas clases:
 * [Tienda.ts](/src/test/Tienda.ts)
 * [Opinion.ts](/src/test/Opinion.ts)
 
+## Cómo compilar el proyecto y ejecutar los test
+
+* Clonar el repositorio
+* Teniendo npm instalado ejecutar `npm install`
+* Para compilar los ficheros y ejecutar los test hay que ejecutar `grunt` o `grunt test`. Para compilar sin ejecutar los test se ejecuta `grunt compile`
+
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
