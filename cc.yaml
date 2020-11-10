@@ -5,10 +5,13 @@ entidad:
   - src/Opinion.ts
   - src/Tienda.ts
   - src/Usuario.ts
+  - src/ControladorOpiniones.ts
+  - src/ValidacionDatos.ts
 test:
   - src/test/AdministradorTienda.ts
   - src/test/Opinion.ts
   - src/test/Tienda.ts
   - src/test/Usuario.ts
+  - src/test/ControladorOpiniones.ts
 fichero_tareas: Gruntfile.js
 
