@@ -11,28 +11,24 @@ describe('AdministradorTienda', function(){
 	
 	describe('Correo electrónico', function(){
 		it('Lanza una excepción si no contiene arrobas', function(){
-			expect(function(){new AdministradorTienda('nombreUsuario', 'correo', 'Ana', 'García')}).to.throw('Correo incorrecto', null);
+			expect(function(){new AdministradorTienda('nombreUsuario', 'correodireccion.es', 'Ana', 'García')}).to.throw('Correo incorrecto', null);
 		})
 		
 		it('Lanza una excepción si contiene más de una arroba', function(){
-			expect(function(){new AdministradorTienda('nombreUsuario', 'co@r@reo', 'Ana', 'García')}).to.throw('Correo incorrecto');
-			expect(function(){new AdministradorTienda('nombreUsuario', 'co@r@r@eo', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(function(){new AdministradorTienda('nombreUsuario', 'co@r@reo.es', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(function(){new AdministradorTienda('nombreUsuario', 'co@r@r@eo.es', 'Ana', 'García')}).to.throw('Correo incorrecto');
 		})
 		
 		it('Lanza una excepción si hay una arroba al principio', function(){
-			expect(function(){new AdministradorTienda('nombreUsuario', '@correo', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(function(){new AdministradorTienda('nombreUsuario', '@correo.direccion.es', 'Ana', 'García')}).to.throw('Correo incorrecto');
 		})
 		
 		it('Lanza una excepción si hay una arroba al final', function(){
-			expect(function(){new AdministradorTienda('nombreUsuario', 'correo@', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(function(){new AdministradorTienda('nombreUsuario', 'correo.direccion.es@', 'Ana', 'García')}).to.throw('Correo incorrecto');
 		})
 		
 		it('Lanza una excepción si contiene un espacio', function(){
-			expect(function(){new AdministradorTienda('nombreUsuario', 'cor @reo', 'Ana', 'García')}).to.throw('Correo incorrecto');
-		})
-		
-		it('No lanza una excepción para un correo correcto', function(){
-			new AdministradorTienda('nombreUsuario', 'usuario@correo.es', 'Ana', 'García');
+			expect(function(){new AdministradorTienda('nombreUsuario', 'correo @direccion.es', 'Ana', 'García')}).to.throw('Correo incorrecto');
 		})
 	})
 	
@@ -41,17 +37,18 @@ describe('AdministradorTienda', function(){
 			expect(function(){new AdministradorTienda('nombre usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
 		})
 		
+		it('Lanza una excepción si contiene un caracter especial', function(){
+			expect(function(){new AdministradorTienda('nombre*usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
+		})
+		
 		it('Lanza una excepción si está vacío', function(){
 			expect(function(){new AdministradorTienda('', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
 		})
-		
-		it('No lanza una excepción para un correo correcto', function(){
-			new AdministradorTienda('nombreUsuario', 'usuario@correo.es', 'Ana', 'García');
-		})
+
 	})
 	
 	describe('Guarda correctamente', function(){
-		it('Crea correctamente un usuario con datos correctos', function(){
+		it('Crea correctamente un administrador con datos correctos', function(){
 			let administrador = new AdministradorTienda('nombreUsuario', 'usuario@correo.es', 'Ana', 'García');
 			
 			expect(administrador.getNombreUsuario()).to.equal('nombreUsuario');
