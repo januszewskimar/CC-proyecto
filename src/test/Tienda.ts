@@ -21,11 +21,6 @@ describe('Tienda', function(){
 		it('Lanza una excepción si contiene puntos', function(){
 			expect(function(){new Tienda('Shop', 'Calle ABC 3, 4A', '+2323.13', null)}).to.throw('Telefono incorrecto');
 		})
-		
-		it('No lanza una excepción para teléfonos correctos', function(){
-			new Tienda('Shop', 'Calle ABC 3, 4A', '+232312313', null);
-			new Tienda('Shop', 'Calle ABC 3, 4A', '123456789', null);
-		})
 	})
 	
 
