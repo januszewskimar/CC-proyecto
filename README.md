@@ -39,7 +39,7 @@ Tests:
 ## Cómo compilar el proyecto y ejecutar los test
 
 * Clonar el repositorio
-* Teniendo npm instalado ejecutar `npm install`
+* Teniendo npm instalado ejecutar `npm install -g grunt-cli` y después `npm install`
 * Para compilar los ficheros y ejecutar los test hay que ejecutar `grunt` o `grunt test`. Para compilar sin ejecutar los test se ejecuta `grunt compile`
 
 ## Enlaces a la documentación
