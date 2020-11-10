@@ -1,0 +1,11 @@
+# Historias de usuario
+* [[HU1] Como usuario, quiero registrarme en el sistema](https://github.com/januszewskimar/shop-safe/issues/7)
+* [[HU2] Como usuario, quiero añadir una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/8)
+* [[HU3] Como usuario, quiero modificar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/9)
+* [[HU4] Como usuario, quiero eliminar una opinión sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/10)
+* [[HU5] Como usuario, quiero conocer las opiniones sobre una tienda](https://github.com/januszewskimar/shop-safe/issues/11)
+* [[HU6] Como usuario, quiero conocer la valoración media de una tienda](https://github.com/januszewskimar/shop-safe/issues/12)
+* [[HU7] Como administrador de una tienda, quiero registrarla en el sistema](https://github.com/januszewskimar/shop-safe/issues/13)
+* [[HU8] Como administrador de una tienda, quiero contestar a una opinión de un usuario](https://github.com/januszewskimar/shop-safe/issues/14)
+* [[HU9] Como administrador de una tienda, quiero modificar una respuesta a una opinión de un usuario](https://github.com/januszewskimar/shop-safe/issues/15)
+* [[HU10] Como administrador de una tienda, quiero eliminar una respuesta a una opinión de un usuario](https://github.com/januszewskimar/shop-safe/issues/16)
