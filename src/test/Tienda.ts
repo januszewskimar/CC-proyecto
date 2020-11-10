@@ -1,5 +1,6 @@
 import 'mocha';
-import  {Tienda} from '../Tienda'; 
+import  {Tienda} from '../Tienda';
+import  {AdministradorTienda} from '../AdministradorTienda'; 
 import {expect} from 'chai';
 
 describe('Tienda', function(){
@@ -30,12 +31,13 @@ describe('Tienda', function(){
 
 	describe('Guarda correctamente', function(){
 		it('Crea correctamente un usuario con datos correctos', function(){
-			let tienda = new Tienda('Shop', 'Calle ABC 3, 4A', '123456789', null);
+			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let tienda = new Tienda('Shop', 'Calle ABC 3, 4A', '123456789', admin);
 			
 			expect(tienda.getNombre()).to.equal('Shop');
 			expect(tienda.getDireccion()).to.equal('Calle ABC 3, 4A');
 			expect(tienda.getTelefono()).to.equal('123456789');
-			expect(tienda.getAdministrador()).to.equal(null);
+			expect(tienda.getAdministrador()).to.equal(admin);
 		})
 	})	
 })
