@@ -29,7 +29,7 @@ export class Opinion{
 	}
 	
 	getUsuario(){
-		return this.tienda;
+		return this.usuario;
 	}
 	
 	getTitulo(){
