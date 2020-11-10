@@ -30,10 +30,6 @@ describe('Usuario', function(){
 		it('Lanza una excepción si contiene un espacio', function(){
 			expect(function(){new Usuario('nombreUsuario', 'cor @reo', 'Ana', 'García')}).to.throw('Correo incorrecto');
 		})
-		
-		it('No lanza una excepción para un correo correcto', function(){
-			new Usuario('nombreUsuario', 'usuario@correo.es', 'Ana', 'García');
-		})
 	})
 	
 	describe('Nombre de usuario', function(){
@@ -45,8 +41,8 @@ describe('Usuario', function(){
 			expect(function(){new Usuario('', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
 		})
 		
-		it('No lanza una excepción para un correo correcto', function(){
-			new Usuario('nombreUsuario', 'usuario@correo.es', 'Ana', 'García');
+		it('Lanza una excepción si contiene un carácter especial no permitido', function(){
+			expect(function(){new Usuario('nombre*usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
 		})
 	})
 	
