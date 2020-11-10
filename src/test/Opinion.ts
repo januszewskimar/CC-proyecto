@@ -1,6 +1,9 @@
 import 'mocha';
-import  {Opinion} from '../Opinion'; 
 import {expect} from 'chai';
+import  {Opinion} from '../Opinion'; 
+import  {AdministradorTienda} from '../AdministradorTienda';
+import  {Tienda} from '../Tienda';
+import  {Usuario} from '../Usuario'; 
 
 describe('Opinion', function(){
 	describe('Carga', function(){
@@ -11,30 +14,45 @@ describe('Opinion', function(){
 	
 	describe('Valoración numérica', function(){
 		it('Lanza una excepción si no es un número entero', function(){
-			expect(function(){new Opinion(null, null, 'Buena tienda', 1.5, 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
+			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
+			admin.setTienda(tienda);
+			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			
+			expect(function(){new Opinion(tienda, usuario, 'Buena tienda', 1.5, 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
 		})
 		
 		it('Lanza una excepción si es menor que 1', function(){
-			expect(function(){new Opinion(null, null, 'Buena tienda', 0, 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
+			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
+			admin.setTienda(tienda);
+			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			
+			expect(function(){new Opinion(tienda, usuario, 'Buena tienda', 0, 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
 		})
 		
 		it('Lanza una excepción si es mayor que 5', function(){
-			expect(function(){new Opinion(null, null, 'Buena tienda', 6 , 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
+			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
+			admin.setTienda(tienda);
+			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			
+			expect(function(){new Opinion(tienda, usuario, 'Buena tienda', 6 , 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
 		})
-		
-		
-		it('No lanza una excepción si es correcta', function(){
-			new Opinion(null, null, 'Buena tienda', 4 , 'Todo correcto');
-		})
+
 	})
 	
 
 	describe('Guarda correctamente', function(){
 		it('Crea correctamente un usuario con datos correctos', function(){
-			let opinion = new Opinion(null, null, 'Buena tienda', 4 , 'Todo correcto');
+			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
+			admin.setTienda(tienda);
+			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			let opinion = new Opinion(tienda, usuario, 'Buena tienda', 4 , 'Todo correcto');
 			
-			expect(opinion.getTienda()).to.equal(null);
-			expect(opinion.getUsuario()).to.equal(null);
+			expect(opinion.getTienda()).to.equal(tienda);
+			expect(opinion.getUsuario()).to.equal(usuario);
 			expect(opinion.getTitulo()).to.equal('Buena tienda');
 			expect(opinion.getValoracionNumerica()).to.equal(4);
 			expect(opinion.getDescripcion()).to.equal('Todo correcto');
