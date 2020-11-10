@@ -37,7 +37,7 @@ describe('AdministradorTienda', function(){
 			expect(function(){new AdministradorTienda('nombre usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
 		})
 		
-		it('Lanza una excepción si contiene un caracter especial no permitido', function(){
+		it('Lanza una excepción si contiene un carácter especial no permitido', function(){
 			expect(function(){new AdministradorTienda('nombre*usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
 		})
 		
