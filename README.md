@@ -42,6 +42,28 @@ Tests:
 * Teniendo npm instalado ejecutar `npm install -g grunt-cli` y después `npm install`
 * Para compilar los ficheros y ejecutar los test hay que ejecutar `grunt` o `grunt test`. Para compilar sin ejecutar los test se ejecuta `grunt compile`
 
+## Selección de imagen base
+
+Se va a elegir la imagen base entre las siguientes opciones:
+* imagen oficial de Node.js - latest (stretch)
+* imagen oficial de Node.js - current-slim (stretch-slim)
+* imagen oficial de Node.js - alpine
+* imagen oficial de Node.js - buster
+* imagen oficial de Node.js - buster-slim
+* imagen propia - Alpine
+
+![Tamaño de imágenes docker Node.js](docs/imgs/docker-tamanio-imagenes.png)
+
+Como se puede ver, la de menor tamaño es la propia, por lo cual, la voy a usar. Para elaborarla, he reutilizado la configuración oficial de alpine quitando la parte correspondiente a la instalación de yarn. No he usado apk add, ya que en el repositorio de Alpine no están las versiones de Node.js y npm más recientes. Además, en la implementación que he elegido es posible seleccionar la versión deseada fácilmente editando la variable de entorno.
+
+## Dockerfile
+
+En la imagen propia, respecto la configuración oficial, he eliminando la parte correspondiente a la instalación de yarn, ya que no lo necesito. He añadido las instrucciones de copia del fichero de Grunt y de los ficheros de código fuente. He creado un fichero [.dockerignore](.dockerignore) en el que se ignoran las carpetas node_modules y los ficheros con la extensión .js y .js.map dentro de la carpeta src (el fichero Gruntfile.js no se ignora). Además, en el Dockerfile he añadido las instrucciones de instalación global de Grunt y de instalación local de las dependencias de package.json. Las instrucciones de RUN se ejecutan en un bloque para evitar la creación de capas innecesarias. Después de instalarse los módulos, los paquetes que eran necesarios para la instalación y no van a ser necesarios más adelante se desinstalan. De la misma manera se eliminan los ficheros temporales. Está añadida también la etiqueda de encargado del mantenimiento. El comando CMD ejecuta grunt test. El fichero se puede ver [aquí](Dockerfile).
+
+El correcto funcionamiento del contenedor se puede ver en la imagen que viene a continuación:
+
+![Contenedor shop-safe funcionando](docs/imgs/docker-shop-safe-funcionando.png)
+
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
 * [Arquitectura](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/arquitectura.md)
