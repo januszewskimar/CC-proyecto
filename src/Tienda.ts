@@ -1,6 +1,7 @@
 import { AdministradorTienda } from "./AdministradorTienda";
 import { Opinion } from "./Opinion";
 import { ValidacionDatos } from "./ValidacionDatos";
+import { ExcepcionTelefonoIncorrecto } from "./ExcepcionTelefonoIncorrecto";
 
 export class Tienda{
 	private nombre: string;
@@ -26,7 +27,7 @@ export class Tienda{
 	
 	setTelefono(telefono: string) {
 		if (!ValidacionDatos.esCorrectoTelefono(telefono)){
-			throw Error('Telefono incorrecto');
+			throw new ExcepcionTelefonoIncorrecto();
 		}
 		
 		this.telefono = telefono;

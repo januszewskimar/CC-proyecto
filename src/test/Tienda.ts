@@ -1,6 +1,7 @@
 import 'mocha';
 import  {Tienda} from '../Tienda';
 import  {AdministradorTienda} from '../AdministradorTienda'; 
+import  {ExcepcionTelefonoIncorrecto} from '../ExcepcionTelefonoIncorrecto'; 
 import {expect} from 'chai';
 
 describe('Tienda', function(){
@@ -12,19 +13,19 @@ describe('Tienda', function(){
 	
 	describe('Número de teléfono', function(){
 		it('Lanza una excepción si contiene una letra', function(){
-			expect(function(){new Tienda('Shop', 'Calle ABC 3, 4A', '+23fa2313', null)}).to.throw('Telefono incorrecto');
+			expect(() => {new Tienda('Shop', 'Calle ABC 3, 4A', '+23fa2313', null)}).to.throw(ExcepcionTelefonoIncorrecto);
 		})
 		
 		it('Lanza una excepción si contiene un espacio', function(){
-			expect(function(){new Tienda('Shop', 'Calle ABC 3, 4A', '+23231 3', null)}).to.throw('Telefono incorrecto');
+			expect(() => {new Tienda('Shop', 'Calle ABC 3, 4A', '+23231 3', null)}).to.throw(ExcepcionTelefonoIncorrecto);
 		})
 		
 		it('Lanza una excepción si contiene un punto', function(){
-			expect(function(){new Tienda('Shop', 'Calle ABC 3, 4A', '+2323.13', null)}).to.throw('Telefono incorrecto');
+			expect(() => {new Tienda('Shop', 'Calle ABC 3, 4A', '+2323.13', null)}).to.throw(ExcepcionTelefonoIncorrecto);
 		})
 		
 		it('Lanza una excepción si contiene un carácter especial no permitido', function(){
-			expect(function(){new Tienda('Shop', 'Calle ABC 3, 4A', '+232_13', null)}).to.throw('Telefono incorrecto');
+			expect(() => {new Tienda('Shop', 'Calle ABC 3, 4A', '+232_13', null)}).to.throw(ExcepcionTelefonoIncorrecto);
 		})
 	})
 	

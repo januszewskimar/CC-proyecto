@@ -1,5 +1,7 @@
 import { Tienda } from "./Tienda";
 import { ValidacionDatos } from "./ValidacionDatos";
+import { ExcepcionNombreUsuarioIncorrecto } from "./ExcepcionNombreUsuarioIncorrecto";
+import { ExcepcionCorreoIncorrecto } from "./ExcepcionCorreoIncorrecto";
 
 export class AdministradorTienda{
 	private nombreUsuario: string;
@@ -17,7 +19,7 @@ export class AdministradorTienda{
 	
 	setCorreo (correo: string){
 		if (!ValidacionDatos.esCorrectoCorreo(correo)){
-			throw Error('Correo incorrecto');
+			throw new ExcepcionCorreoIncorrecto();
 		}
 		
 		this.correo = correo;
@@ -25,7 +27,7 @@ export class AdministradorTienda{
 	
 	setNombreUsuario (nombreUsuario: string){
 		if (!ValidacionDatos.esCorrectoNombreUsuario(nombreUsuario)){
-			throw Error("Nombre de usuario incorrecto");
+			throw new ExcepcionNombreUsuarioIncorrecto();
 		}
 
 		this.nombreUsuario = nombreUsuario;
