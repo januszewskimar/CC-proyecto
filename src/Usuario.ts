@@ -1,4 +1,6 @@
 import { ValidacionDatos } from './ValidacionDatos';
+import { ExcepcionCorreoIncorrecto } from './ExcepcionCorreoIncorrecto';
+import { ExcepcionNombreUsuarioIncorrecto } from './ExcepcionNombreUsuarioIncorrecto';
 
 export class Usuario{
 	private nombreUsuario: string;
@@ -15,7 +17,7 @@ export class Usuario{
 	
 	setCorreo (correo: string){
 		if (!ValidacionDatos.esCorrectoCorreo(correo)){
-			throw Error("Correo incorrecto");
+			throw new ExcepcionCorreoIncorrecto();
 		}
 		
 		this.correo = correo;
@@ -23,7 +25,7 @@ export class Usuario{
 	
 	setNombreUsuario (nom: string){
 		if (!ValidacionDatos.esCorrectoNombreUsuario(nom)){
-			throw Error("Nombre de usuario incorrecto");
+			throw new ExcepcionNombreUsuarioIncorrecto();
 		}
 		
 		this.nombreUsuario = nom;

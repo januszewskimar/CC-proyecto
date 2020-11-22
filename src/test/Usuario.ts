@@ -1,5 +1,7 @@
 import 'mocha';
 import  {Usuario} from '../Usuario'; 
+import  {ExcepcionNombreUsuarioIncorrecto} from '../ExcepcionNombreUsuarioIncorrecto'; 
+import  {ExcepcionCorreoIncorrecto} from '../ExcepcionCorreoIncorrecto'; 
 import {expect} from 'chai';
 
 describe('Usuario', function(){
@@ -11,38 +13,38 @@ describe('Usuario', function(){
 	
 	describe('Correo electrónico', function(){
 		it('Lanza una excepción si no contiene arrobas', function(){
-			expect(function(){new Usuario('nombreUsuario', 'correo', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(() => {new Usuario('nombreUsuario', 'correo', 'Ana', 'García')}).to.throw(ExcepcionCorreoIncorrecto);
 		})
 		
 		it('Lanza una excepción si contiene más de una arroba', function(){
-			expect(function(){new Usuario('nombreUsuario', 'co@r@reo', 'Ana', 'García')}).to.throw('Correo incorrecto');
-			expect(function(){new Usuario('nombreUsuario', 'co@r@r@eo', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(() => {new Usuario('nombreUsuario', 'co@r@reo', 'Ana', 'García')}).to.throw(ExcepcionCorreoIncorrecto);
+			expect(() => {new Usuario('nombreUsuario', 'co@r@r@eo', 'Ana', 'García')}).to.throw(ExcepcionCorreoIncorrecto);
 		})
 		
 		it('Lanza una excepción si hay una arroba al principio', function(){
-			expect(function(){new Usuario('nombreUsuario', '@correo', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(() => {new Usuario('nombreUsuario', '@correo', 'Ana', 'García')}).to.throw(ExcepcionCorreoIncorrecto);
 		})
 		
 		it('Lanza una excepción si hay una arroba al final', function(){
-			expect(function(){new Usuario('nombreUsuario', 'correo@', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(() => {new Usuario('nombreUsuario', 'correo@', 'Ana', 'García')}).to.throw(ExcepcionCorreoIncorrecto);
 		})
 		
 		it('Lanza una excepción si contiene un espacio', function(){
-			expect(function(){new Usuario('nombreUsuario', 'cor @reo', 'Ana', 'García')}).to.throw('Correo incorrecto');
+			expect(() => {new Usuario('nombreUsuario', 'cor @reo', 'Ana', 'García')}).to.throw(ExcepcionCorreoIncorrecto);
 		})
 	})
 	
 	describe('Nombre de usuario', function(){
 		it('Lanza una excepción si contiene un espacio', function(){
-			expect(function(){new Usuario('nombre usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
+			expect(() => {new Usuario('nombre usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw(ExcepcionNombreUsuarioIncorrecto);
 		})
 		
 		it('Lanza una excepción si está vacío', function(){
-			expect(function(){new Usuario('', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
+			expect(() => {new Usuario('', 'usuario@correo.es', 'Ana', 'García')}).to.throw(ExcepcionNombreUsuarioIncorrecto);
 		})
 		
 		it('Lanza una excepción si contiene un carácter especial no permitido', function(){
-			expect(function(){new Usuario('nombre*usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw('Nombre de usuario incorrecto');
+			expect(() => {new Usuario('nombre*usuario', 'usuario@correo.es', 'Ana', 'García')}).to.throw(ExcepcionNombreUsuarioIncorrecto);
 		})
 	})
 	
