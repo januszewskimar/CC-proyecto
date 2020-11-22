@@ -98,6 +98,38 @@ Al final puse un tag correspondiente al contenedor y lo subí:
 
 ![Contenedor subido a GitHub Packages](docs/imgs/contenedores/docker-github-packages-push.png)
 
+## Avance del proyecto
+
+Se han implementado excepciones propias en vez de objetos de la clase Error que se usaban antes:
+* [ExcepcionNombreUsuarioIncorrecto.ts](/src/ExcepcionNombreUsuarioIncorrecto.ts)
+* [ExcepcionCorreoIncorrecto.ts](/src/ExcepcionCorreoIncorrecto.ts)
+* [ExcepcionTelefonoIncorrecto.ts](/src/ExcepcionTelefonoIncorrecto.ts)
+
+Se han empleado las excepciones antes mencionadas en los siguientes clases:
+* [Usuario.ts](/src/Usuario.ts)
+* [AdministradorTienda.ts](/src/AdministradorTienda.ts)
+* [Tienda.ts](/src/Tienda.ts)
+
+Y en los test correspondientes:
+* [Usuario.ts](/src/test/Usuario.ts)
+* [AdministradorTienda.ts](/src/test/AdministradorTienda.ts)
+* [Tienda.ts](/src/test/Tienda.ts)
+
+Además, se ha añadido la funcionalidad de contestar a una opinión de un cliente:
+* [RespuestaOpinion.ts](/src/RespuestaOpinion.ts)
+* [ControladorOpiniones.ts](/src/ControladorOpiniones.ts)
+
+Y en los test correspondientes:
+* [RespuestaOpinion.ts](/src/test/RespuestaOpinion.ts)
+* [ControladorOpiniones.ts](/src/test/ControladorOpiniones.ts)
+
+Adicionalmente, se ha implementado la funcionalidad de conocer la valoración media de una tienda:
+* [ControladorOpiniones.ts](/src/ControladorOpiniones.ts)
+* [ExcepcionNoHayOpiniones.ts](/src/ExcepcionNoHayOpiniones.ts)
+
+Y el test de dicha funcionalidad:
+* [ControladorOpiniones.ts](/src/test/ControladorOpiniones.ts)
+
 
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
