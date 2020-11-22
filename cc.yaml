@@ -7,11 +7,17 @@ entidad:
   - src/Usuario.ts
   - src/ControladorOpiniones.ts
   - src/ValidacionDatos.ts
+  - src/RespuestaOpinion.ts
+  - src/ExcepcionCorreoIncorrecto.ts
+  - src/ExcepcionNoHayOpiniones.ts
+  - src/ExcepcionNombreUsuarioIncorrecto.ts
+  - src/ExcepcionTelefonoIncorrecto.ts
 test:
   - src/test/AdministradorTienda.ts
   - src/test/Opinion.ts
   - src/test/Tienda.ts
   - src/test/Usuario.ts
   - src/test/ControladorOpiniones.ts
+  - src/test/RespuestaOpinion.ts
 fichero_tareas: Gruntfile.js
 
