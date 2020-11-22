@@ -64,6 +64,41 @@ El correcto funcionamiento del contenedor se puede ver en la imagen que viene a 
 
 ![Contenedor shop-safe funcionando](docs/imgs/docker-shop-safe-funcionando.png)
 
+## Docker Hub
+
+El contenedor se ha subido a Docker Hub. Para hacerlo, me he registrado en dicha página y he enlazado la cuenta con la de GitHub:
+
+![Docker Hub - cuenta enlazada con GitHub](docs/imgs/contenedores/docker-hub-enlazado-github.png)
+
+Después he creado un repositorio y lo he enlazado con el de GitHub:
+
+![Docker Hub - creación repositorio](docs/imgs/contenedores/docker-hub-creacion-repositorio.png)
+
+He configurado las construcciones automatizadas:
+
+![Docker Hub - automated builds](docs/imgs/contenedores/docker-hub-automated-builds.png)
+
+## GitHub Package Registry
+
+He utilizado GitHub Package Registry como registro alternativo, ya que es gratuito para repositorios públicos, y además, el repositorio de código está en el mismo servicio que el contenedor y están enlazados.
+
+Primero he activado la funcionalidad Improved Container Support en la página de GitHub:
+
+![GitHub Improved Container Support](docs/imgs/contenedores/github-improved-container-support.png)
+
+Después he creado un token para poder realizar gestiones de contenedores:
+
+![GitHub Container Registry Token](docs/imgs/contenedores/github-token-github-packages.png)
+
+Más tarde he iniciado sesión en docker con el token previamente creado:
+
+![Docker inicio sesión en GitHub Packages](docs/imgs/contenedores/docker-login-github-packages.png)
+
+Al final puse un tag correspondiente al contenedor y lo subí:
+
+![Contenedor subido a GitHub Packages](docs/imgs/contenedores/docker-github-packages-push.png)
+
+
 ## Enlaces a la documentación
 * [Configuración de git y GitHub](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/config-git-github.md)
 * [Arquitectura](https://github.com/januszewskimar/CC-proyecto/blob/main/docs/arquitectura.md)
