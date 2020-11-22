@@ -1,5 +1,6 @@
 import { Opinion } from './Opinion';
 import { Tienda } from './Tienda';
+import { ExcepcionNoHayOpiniones } from './ExcepcionNoHayOpiniones';
 
 export class ControladorOpiniones{
 	private opiniones: Opinion[] = [];
@@ -20,5 +21,23 @@ export class ControladorOpiniones{
 			}
 		}
 		return resultado;
+	}
+	
+	getValoracionMediaTienda(t: Tienda) : number{
+		let num = 0;
+		let suma = 0;
+		for (let i = 0 ; i < this.opiniones.length ; i++){
+			if (this.opiniones[i].getTienda() == t){
+				num++;
+				suma += this.opiniones[i].getValoracionNumerica();
+			}
+		}
+		
+		if (num == 0){
+			throw new ExcepcionNoHayOpiniones();
+		}
+		else{
+			return suma / num;
+		}
 	}
 }
