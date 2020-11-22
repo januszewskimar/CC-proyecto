@@ -28,14 +28,14 @@ describe('ControladorOpiniones', function(){
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let u2 = new Usuario("carmad", "carmad@correo.es", "Carolina", "Madrid");
 			
-			let op1 = new Opinion(t1, u1, "Todo correcto", 5, "La entrega ha sido rápida");
+			let op1 = new Opinion(t1, new Date(Date.now()), u1, "Todo correcto", 5, "La entrega ha sido rápida");
 			controlador.addOpinion(op1);
-			let op2 = new Opinion(t2, u1, "Muy mal", 1, "El producto llegó después de dos semanas");
+			let op2 = new Opinion(t2, new Date(Date.now()), u1, "Muy mal", 1, "El producto llegó después de dos semanas");
 			controlador.addOpinion(op2);
 			
-			let op3 = new Opinion(t1, u2, "Bien", 4, "No ha habido ningún problema");
+			let op3 = new Opinion(t1, new Date(Date.now()), u2, "Bien", 4, "No ha habido ningún problema");
 			controlador.addOpinion(op3);
-			let op4 = new Opinion(t2, u2, "Regular", 3, "El producto llegó defectuoso pero la devolución se ha gestionado rápidamente");
+			let op4 = new Opinion(t2, new Date(Date.now()), u2, "Regular", 3, "El producto llegó defectuoso pero la devolución se ha gestionado rápidamente");
 			controlador.addOpinion(op4);
 			
 			let resultado: Opinion[] = controlador.getOpiniones(t1);
