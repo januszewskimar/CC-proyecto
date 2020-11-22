@@ -1,5 +1,6 @@
 import { Tienda } from "./Tienda";
 import { Usuario } from "./Usuario";
+import { RespuestaOpinion } from "./RespuestaOpinion";
 
 export class Opinion{
 	tienda: Tienda;
@@ -8,6 +9,7 @@ export class Opinion{
 	titulo: string;
 	valoracionNumerica: number;
 	descripcion: string;
+	respuesta: RespuestaOpinion;
 
 	constructor (tienda: Tienda, fecha: Date, usuario: Usuario, titulo: string, valoracionNumerica: number, descripcion: string){
 		this.tienda = tienda;
@@ -24,6 +26,10 @@ export class Opinion{
 		}
 		
 		this.valoracionNumerica = valoracionNumerica;
+	}
+	
+	setRespuesta(respuesta: RespuestaOpinion){
+		this.respuesta = respuesta;
 	}
 	
 	getTienda(){
