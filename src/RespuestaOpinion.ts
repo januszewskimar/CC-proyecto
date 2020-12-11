@@ -2,13 +2,14 @@ import { Opinion } from "./Opinion";
 
 export class RespuestaOpinion{
 	opinion: Opinion;
-	fecha: Date;
+	fechaCreacion: Date;
+	fechaEdicion: Date;
 	contenido: string;
 
-	constructor(opinion: Opinion, fecha: Date, contenido: string){
+	constructor(opinion: Opinion, fechaCreacion: Date, contenido: string){
 		this.opinion = opinion;
 		opinion.setRespuesta(this);
-		this.fecha = fecha;
+		this.fechaCreacion = fechaCreacion;
 		this.contenido = contenido;
 	}
 	
@@ -16,11 +17,23 @@ export class RespuestaOpinion{
 		return this.opinion;
 	}
 	
-	getFecha(){
-		return this.fecha;
+	getFechaCreacion(){
+		return this.fechaCreacion;
+	}
+	
+	getFechaEdicion(){
+		return this.fechaEdicion;
 	}
 	
 	getContenido(){
 		return this.contenido;
+	}
+	
+	setContenido(c: string){
+		this.contenido = c;
+	}
+	
+	setFechaEdicion(f: Date){
+		this.fechaEdicion = f;
 	}
 }
