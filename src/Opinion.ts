@@ -4,20 +4,25 @@ import { RespuestaOpinion } from "./RespuestaOpinion";
 
 export class Opinion{
 	tienda: Tienda;
-	fecha: Date;
+	fechaCreacion: Date;
+	fechaEdicion: Date;
 	usuario: Usuario;
 	titulo: string;
 	valoracionNumerica: number;
 	descripcion: string;
 	respuesta: RespuestaOpinion;
 
-	constructor (tienda: Tienda, fecha: Date, usuario: Usuario, titulo: string, valoracionNumerica: number, descripcion: string){
+	constructor (tienda: Tienda, fechaCreacion: Date, usuario: Usuario, titulo: string, valoracionNumerica: number, descripcion: string){
 		this.tienda = tienda;
-		this.fecha = fecha;
+		this.fechaCreacion = fechaCreacion;
 		this.usuario = usuario;
 		this.titulo = titulo;
 		this.setValoracionNumerica(valoracionNumerica);
 		this.descripcion = descripcion;
+	}
+	
+	setTitulo(t: string){
+		this.titulo = t;
 	}
 	
 	setValoracionNumerica(valoracionNumerica: number){
@@ -28,16 +33,28 @@ export class Opinion{
 		this.valoracionNumerica = valoracionNumerica;
 	}
 	
+	setDescripcion(d: string){
+		this.descripcion = d;
+	}
+	
 	setRespuesta(respuesta: RespuestaOpinion){
 		this.respuesta = respuesta;
+	}
+	
+	setFechaEdicion(f: Date){
+		this.fechaEdicion = f;
 	}
 	
 	getTienda(){
 		return this.tienda;
 	}
 	
-	getFecha(){
-		return this.fecha;
+	getFechaCreacion(){
+		return this.fechaCreacion;
+	}
+	
+	getFechaEdicion(){
+		return this.fechaEdicion;
 	}
 	
 	getUsuario(){
