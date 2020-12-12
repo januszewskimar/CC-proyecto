@@ -6,6 +6,7 @@ jobs:
       - image: januszewskimar/shop-safe:latest
     steps:
       - checkout
+      - run: npm ci
       - run: grunt test
 
 workflows:
