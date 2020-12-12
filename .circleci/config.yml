@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: januszewskimar/shop-safe:latest
+    steps:
+      - checkout
+      - run: grunt test
+
+workflows:
+  test:
+    jobs:
+      - test
+
