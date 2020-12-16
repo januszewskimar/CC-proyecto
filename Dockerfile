@@ -83,4 +83,4 @@ USER node
 
 RUN npm ci
     
-CMD grunt test
+CMD ["grunt", "test"]
