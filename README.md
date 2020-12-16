@@ -1,7 +1,7 @@
 # shop-safe
 
 [![Travis CI - Build Status](https://travis-ci.com/januszewskimar/shop-safe.svg?branch=main)](https://travis-ci.com/januszewskimar/shop-safe)
-[![CircleCI - Status]](https://circleci.com/gh/januszewskimar/shop-safe.svg?style=svg))
+[![CircleCI - Status](https://circleci.com/gh/januszewskimar/shop-safe.svg?style=svg)](https://circleci.com/gh/januszewskimar/shop-safe)
 
 Repositorio con el proyecto realizado en la asignatura Cloud Computing del Máster en Ingeniería Informática por la Universidad de Granada.
 
