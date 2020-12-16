@@ -72,13 +72,15 @@ RUN addgroup -g 1000 node \
   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" \
   && apk del .build-deps
   # source end
-  
-COPY Gruntfile.js package.json package-lock.json  /shop-safe/
-COPY src /shop-safe/src/
 
 WORKDIR /shop-safe
 
-RUN npm install -g grunt-cli \
-    && npm ci
+COPY package.json package-lock.json Gruntfile.js  /shop-safe/
 
-CMD ["grunt", "test"]
+RUN npm install -g grunt-cli && chown -R node /shop-safe
+
+USER node
+
+RUN npm ci
+    
+CMD grunt test
