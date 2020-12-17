@@ -3,21 +3,24 @@ lenguaje: TypeScript
 entidad:
   - src/AdministradorTienda.ts
   - src/Opinion.ts
+  - src/ControladorOpiniones.ts
   - src/Tienda.ts
   - src/Usuario.ts
-  - src/ControladorOpiniones.ts
+  - src/ControladorUsuarios.ts
   - src/ValidacionDatos.ts
   - src/RespuestaOpinion.ts
   - src/ExcepcionCorreoIncorrecto.ts
   - src/ExcepcionNoHayOpiniones.ts
   - src/ExcepcionNombreUsuarioIncorrecto.ts
   - src/ExcepcionTelefonoIncorrecto.ts
+  - src/ExcepcionUsuarioYaExiste.ts
 test:
   - src/test/AdministradorTienda.ts
   - src/test/Opinion.ts
+  - src/test/ControladorOpiniones.ts
   - src/test/Tienda.ts
   - src/test/Usuario.ts
-  - src/test/ControladorOpiniones.ts
+  - src/test/ControladorUsuarios.ts
   - src/test/RespuestaOpinion.ts
 fichero_tareas: Gruntfile.js
 
