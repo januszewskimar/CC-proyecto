@@ -9,11 +9,11 @@ Repositorio con el proyecto realizado en la asignatura Cloud Computing del Mást
 Hoy día hay muchas personas que desean realizar compras en línea. También existe una gran cantidad de tiendas cuya fiabilidad desconocen. Los usuarios quisieran conocer las opiniones de otras personas que ya han realizado compras en una determinada tienda para saber si esta es de fiar. Por otro lado, las tiendas quisieran poder defenderse públicamente y solicitar más información a los clientes con el fin de mejorar el servicio. Se desea desarrollar un sistema que permita a los clientes leer y publicar opiniones sobre tiendas y que las tiendas puedan responder a dichas opiniones.
 
 
-## Cómo compilar el proyecto y ejecutar los test
+## Cómo ejecutar los test usando Docker
 
 * Clonar el repositorio
-* Teniendo npm instalado ejecutar `npm install -g grunt-cli` y después `npm install`
-* Para compilar los ficheros y ejecutar los test hay que ejecutar `grunt` o `grunt test`. Para compilar sin ejecutar los test se ejecuta `grunt compile`
+* Teniendo Docker instalado ejecutar en el directorio del proyecto `docker build -t januszewskimar/shop-safe`
+* Ejecutar en el mismo directorio `docker run -v "$(pwd)/src":/shop-safe/src januszewskimar/shop-safe`
 
 
 ## Sistema de Integración Continua
