@@ -25,3 +25,12 @@ describe('POST /opiniones', function() {
       .expect(400, done);
   });
 });
+
+describe('GET /tiendas/:tienda/opiniones', function() {
+  it('Publica las opiniones', function(done) {
+    request(app)
+      .get('/tiendas/Tienda%20Granada/opiniones')
+      .expect('Content-Type', /json/)
+      .expect(200, done);
+  });
+});

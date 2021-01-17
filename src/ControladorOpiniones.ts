@@ -25,6 +25,16 @@ export class ControladorOpiniones{
 		this.addOpinion(o);
 	}
 	
+	getOpinionesNombreTienda(n: String) : Opinion[]{
+		let resultado: Opinion[] = [];
+		for (let i = 0 ; i < this.opiniones.length ; i++){
+			if (this.opiniones[i].getTienda().getNombre() == n){
+				resultado.push(this.opiniones[i]);
+			}
+		}
+		return resultado;
+	}
+	
 	getOpiniones(t: Tienda) : Opinion[]{
 		let resultado: Opinion[] = [];
 		for (let i = 0 ; i < this.opiniones.length ; i++){

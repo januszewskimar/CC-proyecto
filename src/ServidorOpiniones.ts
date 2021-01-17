@@ -22,4 +22,9 @@ app.post('/tienda/:tienda/opiniones', function (req, res) {
 	}
 });
 
+app.get('/tiendas/:tienda/opiniones', function (req, res) {
+	var lista = controlador.getOpinionesNombreTienda(req.params.tienda);
+	res.status(200).send(lista);
+});
+
 export default app;
