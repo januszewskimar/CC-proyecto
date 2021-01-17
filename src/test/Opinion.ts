@@ -1,9 +1,10 @@
 import 'mocha';
-import {expect} from 'chai';
-import  {Opinion} from '../Opinion'; 
-import  {AdministradorTienda} from '../AdministradorTienda';
-import  {Tienda} from '../Tienda';
-import  {Usuario} from '../Usuario'; 
+import { expect } from 'chai';
+import { Opinion } from '../Opinion'; 
+import { AdministradorTienda } from '../AdministradorTienda';
+import { Tienda } from '../Tienda';
+import { Usuario } from '../Usuario';
+import { ExcepcionValoracionNumericaIncorrecta } from '../ExcepcionValoracionNumericaIncorrecta';
 
 describe('Opinion', function(){
 	describe('Carga', function(){
@@ -19,7 +20,7 @@ describe('Opinion', function(){
 			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
-			expect(function(){new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 1.5, 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
+			expect(() => {new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 1.5, 'Todo correcto')}).to.throw(ExcepcionValoracionNumericaIncorrecta);
 		})
 		
 		it('Lanza una excepción si es menor que 1', function(){
@@ -28,7 +29,7 @@ describe('Opinion', function(){
 			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
-			expect(function(){new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 0, 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
+			expect(() => {new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 0, 'Todo correcto')}).to.throw(ExcepcionValoracionNumericaIncorrecta);
 		})
 		
 		it('Lanza una excepción si es mayor que 5', function(){
@@ -37,7 +38,7 @@ describe('Opinion', function(){
 			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
-			expect(function(){new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 6 , 'Todo correcto')}).to.throw('Valoracion numerica incorrecta');
+			expect(() => {new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 6 , 'Todo correcto')}).to.throw(ExcepcionValoracionNumericaIncorrecta);
 		})
 
 	})

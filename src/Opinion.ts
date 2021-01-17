@@ -1,6 +1,7 @@
 import { Tienda } from "./Tienda";
 import { Usuario } from "./Usuario";
 import { RespuestaOpinion } from "./RespuestaOpinion";
+import { ExcepcionValoracionNumericaIncorrecta } from "./ExcepcionValoracionNumericaIncorrecta";
 
 export class Opinion{
 	tienda: Tienda;
@@ -27,7 +28,7 @@ export class Opinion{
 	
 	setValoracionNumerica(valoracionNumerica: number){
 		if (valoracionNumerica % 1 != 0 || valoracionNumerica < 1 || valoracionNumerica > 5){
-			throw Error('Valoracion numerica incorrecta');
+			throw new ExcepcionValoracionNumericaIncorrecta();
 		}
 		
 		this.valoracionNumerica = valoracionNumerica;
