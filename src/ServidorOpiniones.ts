@@ -3,6 +3,7 @@ import { Usuario } from "./Usuario";
 import { ControladorOpiniones } from "./ControladorOpiniones";
 import { ExcepcionValoracionNumericaIncorrecta } from "./ExcepcionValoracionNumericaIncorrecta";
 import { ExcepcionNoHayOpiniones } from "./ExcepcionNoHayOpiniones";
+import { ExcepcionOpinionNoExiste } from "./ExcepcionOpinionNoExiste";
 
 var app = express();
 app.use(express.json());
@@ -50,6 +51,20 @@ app.delete('/tiendas/:tienda/opiniones/:id', function (req, res){
 		res.status(404).send("Recurso no encontrado");
 	}	
 
+});
+
+app.put('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res) {
+	try{
+		controlador.publicarRespuesta(req.params.tienda, req.params.id, req.body.contenido);
+		res.status(200).send("Opinión publicada");
+	} catch (err) {
+		if (err instanceof ExcepcionOpinionNoExiste){
+			res.status(404).send("La opinión no existe");
+		}
+		else{
+			res.status(500).send("Error no especificado");
+		}
+	}
 });
 
 export default app;

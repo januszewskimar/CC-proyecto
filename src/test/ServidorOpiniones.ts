@@ -88,3 +88,32 @@ describe('DELETE /tiendas/:tienda/opiniones/:id', function() {
       .expect(404, done);
   });
 });
+
+
+describe('PUT /tiendas/:tienda/opiniones/:id/respuesta', function() {
+  it('Devuelve error si se intenta publicar una respuesta a una opinión que no existe', function(done) {
+    var data = { "contenido": "No estamos de acuerdo" }
+    request(app)
+      .put('/tiendas/Tienda%20RTY/opiniones/0/respuesta')
+      .send(data)
+      .expect('Content-Type', /text/)
+      .expect(404, done);
+  });
+  
+  it('Publica una respuesta a una opinión existente', function(done) {
+    var data1 = { "nombreUsuario": "david", "titulo": "Bien", "valoracionNumerica": "5", "descripcion": "Todo muy bien" }
+    var data2 = { "contenido": "No estamos de acuerdo" }
+    request(app)
+      .post('/tiendas/Tienda%20QWE/opiniones')
+      .send(data1)
+      .expect('Content-Type', /text/)
+      .expect(200)
+      .end(function(){
+        request(app)
+          .put('/tiendas/Tienda%20QWE/opiniones/0/respuesta')
+          .send(data2)
+          .expect('Content-Type', /text/)
+          .expect(200, done);
+      });
+  });
+});

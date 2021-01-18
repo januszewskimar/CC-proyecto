@@ -1,8 +1,10 @@
 import { Opinion } from './Opinion';
+import { RespuestaOpinion } from './RespuestaOpinion';
 import { AdministradorTienda } from './AdministradorTienda';
 import { Tienda } from './Tienda';
 import { Usuario } from './Usuario';
 import { ExcepcionNoHayOpiniones } from './ExcepcionNoHayOpiniones';
+import { ExcepcionOpinionNoExiste } from './ExcepcionOpinionNoExiste';
 
 export class ControladorOpiniones{
 	private opiniones: Opinion[] = [];
@@ -32,6 +34,23 @@ export class ControladorOpiniones{
 		var o: Opinion = new Opinion(t, new Date(Date.now()), u, titulo, valoracionNumerica, descripcion);
 		
 		this.addOpinion(o);
+	}
+	
+	publicarRespuesta(tienda: string, id: number, contenido: string) {
+		for (let i = 0 ; i < this.opiniones.length ; i++){
+			if ( (this.opiniones[i].getTienda().getNombre() == tienda) && (this.opiniones[i].getId() == id) ){
+				var op = this.opiniones[i];
+				if (op.tieneRespuesta()){
+					op.getRespuesta().setContenido(contenido);
+				}
+				else{
+					var r: RespuestaOpinion = new RespuestaOpinion (op, new Date(Date.now()), contenido);
+					op.setRespuesta(r);
+				}
+				return;
+			}
+		}
+		throw new ExcepcionOpinionNoExiste();
 	}
 	
 	getOpinionesNombreTienda(n: String) : Opinion[]{

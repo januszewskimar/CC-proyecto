@@ -82,4 +82,12 @@ export class Opinion{
 	getDescripcion(){
 		return this.descripcion;
 	}
+	
+	getRespuesta(){
+		return this.respuesta;
+	}
+	
+	tieneRespuesta(){
+		return this.respuesta != null;
+	}
 }
