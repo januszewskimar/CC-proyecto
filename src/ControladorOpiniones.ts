@@ -8,10 +8,19 @@ export class ControladorOpiniones{
 	private opiniones: Opinion[] = [];
 	
 	constructor(){
-
+	
 	}
 	
 	addOpinion(op: Opinion){
+		var id = -1;
+		for (let i = 0 ; i < this.opiniones.length ; i++){
+			if (this.opiniones[i].getTienda().getNombre() == op.getTienda().getNombre()){
+				if (this.opiniones[i].getId() > id){
+					id = this.opiniones[i].getId();
+				}
+			}
+		}
+		op.setId(id + 1);
 		this.opiniones.push(op);
 	}
 	
@@ -61,5 +70,15 @@ export class ControladorOpiniones{
 		else{
 			return suma / num;
 		}
+	}
+	
+	eliminarOpinion(tienda: string, id: number) : boolean{
+		for (let i = 0 ; i < this.opiniones.length ; i++){
+			if ( (this.opiniones[i].getTienda().getNombre() == tienda) && (this.opiniones[i].getId() == id) ){
+				this.opiniones.splice(i, 1);
+				return true;
+			}
+		}
+		return false;
 	}
 }

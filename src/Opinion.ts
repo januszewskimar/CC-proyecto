@@ -5,6 +5,7 @@ import { ExcepcionValoracionNumericaIncorrecta } from "./ExcepcionValoracionNume
 
 export class Opinion{
 	tienda: Tienda;
+	id: number;
 	fechaCreacion: Date;
 	fechaEdicion: Date;
 	usuario: Usuario;
@@ -20,6 +21,14 @@ export class Opinion{
 		this.titulo = titulo;
 		this.setValoracionNumerica(valoracionNumerica);
 		this.descripcion = descripcion;
+	}
+	
+	getId() : number{
+		return this.id;
+	}
+	
+	setId(id: number){
+		this.id = id;
 	}
 	
 	setTitulo(t: string){

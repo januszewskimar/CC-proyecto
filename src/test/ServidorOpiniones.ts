@@ -34,3 +34,28 @@ describe('GET /tiendas/:tienda/opiniones', function() {
       .expect(200, done);
   });
 });
+
+describe('DELETE /tiendas/:tienda/opiniones/:id', function() {
+  it('Elimina una opinión existente', function(done) {
+    var data = { "nombreUsuario": "juan", "titulo": "Regular", "valoracionNumerica": "3", "descripcion": "Regular" }
+    request(app)
+      .post('/tienda/Tienda%20ABC/opiniones')
+      .send(data)
+      .expect('Content-Type', /text/)
+      .expect(200)
+      .end(function(){
+        request(app)
+          .delete('/tiendas/Tienda%20ABC/opiniones/0')
+          .expect('Content-Type', /text/)
+          .expect(200, done)
+      });
+  });
+
+
+  it('Devuelve error si se intenta eliminar una opinión inexistente', function(done) {
+    request(app)
+      .delete('/tiendas/Tienda%20Granada/opiniones/241')
+      .expect('Content-Type', /text/)
+      .expect(404, done);
+  });
+});

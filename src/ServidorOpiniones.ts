@@ -27,4 +27,14 @@ app.get('/tiendas/:tienda/opiniones', function (req, res) {
 	res.status(200).send(lista);
 });
 
+app.delete('/tiendas/:tienda/opiniones/:id', function (req, res){
+	if (controlador.eliminarOpinion(req.params.tienda, req.params.id)){
+		res.status(200).send("Opinión eliminada");
+	}
+	else{
+		res.status(404).send("Recurso no encontrado");
+	}	
+
+});
+
 export default app;
