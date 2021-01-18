@@ -67,7 +67,7 @@ describe('ControladorOpiniones', function(){
 			let op2 = new Opinion(t1, new Date(Date.now()), u2, "Bien", 4, "No ha habido ningún problema");
 			controlador.addOpinion(op2);
 			
-			expect(() => {controlador.getValoracionMediaTienda(t2)}).to.throw(ExcepcionNoHayOpiniones);
+			expect(() => {controlador.getValoracionMediaTienda(t2.getNombre())}).to.throw(ExcepcionNoHayOpiniones);
 		})
 		
 		it('Calcula bien la valoración media si hay opiniones sobre la tienda', function(){
@@ -95,7 +95,7 @@ describe('ControladorOpiniones', function(){
 			controlador.addOpinion(op4);
 			
 			
-			expect(controlador.getValoracionMediaTienda(t2)).to.equal((1+3)/2);
+			expect(controlador.getValoracionMediaTienda(t2.getNombre())).to.equal((1+3)/2);
 		})
 	})
 	

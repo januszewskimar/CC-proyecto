@@ -1,16 +1,16 @@
 import 'mocha';
 import 'supertest';
 import app from '../ServidorOpiniones'; 
-import {Usuario} from '../Usuario'; 
-import {ExcepcionUsuarioYaExiste} from '../ExcepcionUsuarioYaExiste'; 
 
 var request = require('supertest');
+
+
 
 describe('POST /tiendas/:tienda/opiniones', function() {
   it('Publica una opinión correcta', function(done) {
     var data = { "nombreUsuario": "david", "titulo": "Bien", "valoracionNumerica": "5", "descripcion": "Todo muy bien" }
     request(app)
-      .post('/tienda/Tienda%20Granada/opiniones')
+      .post('/tiendas/Tienda%20Granada/opiniones')
       .send(data)
       .expect('Content-Type', /text/)
       .expect(200, done);
@@ -19,15 +19,17 @@ describe('POST /tiendas/:tienda/opiniones', function() {
   it('Devuelve error si se intenta publicar una opinión con una valoración numérica incorrecta', function(done) {
     var data = { "nombreUsuario": "david", "titulo": "Bien", "valoracionNumerica": "6", "descripcion": "Todo muy bien" }
     request(app)
-      .post('/tienda/Tienda%20Granada/opiniones')
+      .post('/tiendas/Tienda%20Granada/opiniones')
       .send(data)
       .expect('Content-Type', /text/)
       .expect(400, done);
   });
 });
 
+
+
 describe('GET /tiendas/:tienda/opiniones', function() {
-  it('Publica las opiniones', function(done) {
+  it('Devuelve las opiniones sobre una tienda', function(done) {
     request(app)
       .get('/tiendas/Tienda%20Granada/opiniones')
       .expect('Content-Type', /json/)
@@ -35,11 +37,39 @@ describe('GET /tiendas/:tienda/opiniones', function() {
   });
 });
 
+
+
+describe('GET /tiendas/:tienda/valoracion-media', function() {
+  it('Devuelve error si se quiere obtener la valoración media de una tienda sobre la que no hay opiniones', function(done) {
+    request(app)
+      .get('/tiendas/Tienda%20XYZ/valoracion-media')
+      .expect('Content-Type', /text/)
+      .expect(406, done);
+  });
+  
+  it('Devuelve la valoración media de una tienda si existen opiniones sobre ella', function(done) {
+    var data = { "nombreUsuario": "carolina", "titulo": "Bien", "valoracionNumerica": "5", "descripcion": "Todo muy bien" }
+    request(app)
+      .post('/tiendas/Tienda%20Albacete/opiniones')
+      .send(data)
+      .expect('Content-Type', /text/)
+      .expect(200)
+      .end(function(){
+        request(app)
+          .get('/tiendas/Tienda%20Albacete/valoracion-media')
+          .expect('Content-Type', /text/)
+          .expect(200, done);
+      });
+  });
+});
+
+
+
 describe('DELETE /tiendas/:tienda/opiniones/:id', function() {
   it('Elimina una opinión existente', function(done) {
     var data = { "nombreUsuario": "juan", "titulo": "Regular", "valoracionNumerica": "3", "descripcion": "Regular" }
     request(app)
-      .post('/tienda/Tienda%20ABC/opiniones')
+      .post('/tiendas/Tienda%20ABC/opiniones')
       .send(data)
       .expect('Content-Type', /text/)
       .expect(200)
@@ -50,7 +80,6 @@ describe('DELETE /tiendas/:tienda/opiniones/:id', function() {
           .expect(200, done)
       });
   });
-
 
   it('Devuelve error si se intenta eliminar una opinión inexistente', function(done) {
     request(app)

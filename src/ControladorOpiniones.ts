@@ -54,11 +54,11 @@ export class ControladorOpiniones{
 		return resultado;
 	}
 	
-	getValoracionMediaTienda(t: Tienda) : number{
+	getValoracionMediaTienda(t: string) : number{
 		let num = 0;
 		let suma = 0;
 		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if (this.opiniones[i].getTienda() == t){
+			if (this.opiniones[i].getTienda().getNombre() == t){
 				num++;
 				suma += this.opiniones[i].getValoracionNumerica();
 			}
