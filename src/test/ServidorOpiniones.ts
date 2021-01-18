@@ -131,7 +131,7 @@ describe('ServidorOpiniones', function(){
         .expect(404, done);
     });
     
-    it('Devuelve error si se intenta elimina la respuesta de una opinión existente que no la contiene', function(done) {
+    it('Devuelve error si se intenta eliminar la respuesta de una opinión existente que no la contiene', function(done) {
       var data1 = { "nombreUsuario": "david", "titulo": "Bien", "valoracionNumerica": "5", "descripcion": "Todo muy bien" }
       var data2 = { "contenido": "No estamos de acuerdo" }
       request(app)
