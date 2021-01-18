@@ -5,6 +5,8 @@ import { Tienda } from './Tienda';
 import { Usuario } from './Usuario';
 import { ExcepcionNoHayOpiniones } from './ExcepcionNoHayOpiniones';
 import { ExcepcionOpinionNoExiste } from './ExcepcionOpinionNoExiste';
+import { ExcepcionRespuestaOpinionNoExiste } from './ExcepcionRespuestaOpinionNoExiste';
+
 
 export class ControladorOpiniones{
 	private opiniones: Opinion[] = [];
@@ -99,5 +101,21 @@ export class ControladorOpiniones{
 			}
 		}
 		return false;
+	}
+	
+	eliminarRespuestaOpinion(tienda: string, id: number){
+		for (let i = 0 ; i < this.opiniones.length ; i++){
+			if ( (this.opiniones[i].getTienda().getNombre() == tienda) && (this.opiniones[i].getId() == id) ){
+				let op = this.opiniones[i];
+				if (op.tieneRespuesta()){
+					op.eliminarRespuesta();
+					return;
+				}
+				else{
+					throw new ExcepcionRespuestaOpinionNoExiste();
+				}
+			}
+		}
+		throw new ExcepcionOpinionNoExiste();
 	}
 }

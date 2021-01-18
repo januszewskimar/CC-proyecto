@@ -4,6 +4,7 @@ import { ControladorOpiniones } from "./ControladorOpiniones";
 import { ExcepcionValoracionNumericaIncorrecta } from "./ExcepcionValoracionNumericaIncorrecta";
 import { ExcepcionNoHayOpiniones } from "./ExcepcionNoHayOpiniones";
 import { ExcepcionOpinionNoExiste } from "./ExcepcionOpinionNoExiste";
+import { ExcepcionRespuestaOpinionNoExiste } from "./ExcepcionRespuestaOpinionNoExiste";
 
 var app = express();
 app.use(express.json());
@@ -65,6 +66,24 @@ app.put('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res) {
 			res.status(500).send("Error no especificado");
 		}
 	}
+});
+
+app.delete('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res){
+	try{
+		controlador.eliminarRespuestaOpinion(req.params.tienda, req.params.id);
+		res.status(200).send("Respuesta eliminada");
+	} catch (err) {
+		if (err instanceof ExcepcionOpinionNoExiste){
+			res.status(404).send("La opinión no existe");
+		}
+		else if (err instanceof ExcepcionRespuestaOpinionNoExiste){
+			res.status(404).send("La opinión no contiene una respuesta");
+		}
+		else{
+			res.status(500).send("Error no especificado");
+		}
+	}
+
 });
 
 export default app;

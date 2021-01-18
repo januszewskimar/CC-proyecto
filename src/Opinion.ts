@@ -90,4 +90,8 @@ export class Opinion{
 	tieneRespuesta(){
 		return this.respuesta != null;
 	}
+	
+	eliminarRespuesta(){
+		this.respuesta = null;
+	}
 }

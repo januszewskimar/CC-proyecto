@@ -1,13 +1,14 @@
 import 'mocha';
-import {ControladorOpiniones} from '../ControladorOpiniones';
-import {AdministradorTienda} from '../AdministradorTienda';
-import {Tienda} from '../Tienda'; 
-import {Usuario} from '../Usuario';
-import {Opinion} from '../Opinion';
-import {RespuestaOpinion} from '../RespuestaOpinion';
-import {ExcepcionNoHayOpiniones} from '../ExcepcionNoHayOpiniones';
-import {ExcepcionOpinionNoExiste} from '../ExcepcionOpinionNoExiste';
-import {expect} from 'chai';
+import { ControladorOpiniones } from '../ControladorOpiniones';
+import { AdministradorTienda } from '../AdministradorTienda';
+import { Tienda } from '../Tienda'; 
+import { Usuario } from '../Usuario';
+import { Opinion } from '../Opinion';
+import { RespuestaOpinion } from '../RespuestaOpinion';
+import { ExcepcionNoHayOpiniones } from '../ExcepcionNoHayOpiniones';
+import { ExcepcionOpinionNoExiste } from '../ExcepcionOpinionNoExiste';
+import { ExcepcionRespuestaOpinionNoExiste } from '../ExcepcionRespuestaOpinionNoExiste';
+import { expect } from 'chai';
 
 describe('ControladorOpiniones', function(){
 	describe('Carga', function(){
@@ -232,6 +233,58 @@ describe('ControladorOpiniones', function(){
 			let r: RespuestaOpinion = op1.getRespuesta();
 			expect(r.getOpinion()).to.equal(op1);
 			expect(r.getContenido()).to.equal("Perdón por los inconvenientes");
+		})
+	})
+	
+	describe('Eliminar una respuesta a una opinión', function(){
+		it('Lanza una excepción si se indica una opinión que no existe', function(){
+			let controlador = new ControladorOpiniones();
+			
+			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
+			adt1.setTienda(t1);
+			
+			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			
+			let op1 = new Opinion(t1, new Date(Date.now()), u1, "Todo correcto", 5, "La entrega ha sido rápida");
+			controlador.addOpinion(op1);
+			
+			controlador.publicarRespuesta("Tienda1", 0, "No estamos de acuerdo");
+			
+			expect(() => {controlador.eliminarRespuestaOpinion("Tienda1", 1)}).to.throw(ExcepcionOpinionNoExiste);
+		})
+		
+		it('Lanza una excepción si se indica una opinión que existe y no tiene agregada una respuesta', function(){
+			let controlador = new ControladorOpiniones();
+			
+			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
+			adt1.setTienda(t1);
+			
+			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			
+			let op1 = new Opinion(t1, new Date(Date.now()), u1, "Todo correcto", 5, "La entrega ha sido rápida");
+			controlador.addOpinion(op1);
+			
+			expect(() => {controlador.eliminarRespuestaOpinion("Tienda1", 0)}).to.throw(ExcepcionRespuestaOpinionNoExiste);
+		})
+		
+		it('Elimina la respuesta a una opinión si se indica una opinión que existe y tiene agregada una respuesta', function(){
+			let controlador = new ControladorOpiniones();
+			
+			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
+			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
+			adt1.setTienda(t1);
+			
+			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
+			
+			let op1 = new Opinion(t1, new Date(Date.now()), u1, "Todo correcto", 5, "La entrega ha sido rápida");
+			controlador.addOpinion(op1);
+			
+			controlador.publicarRespuesta("Tienda1", 0, "No estamos de acuerdo");
+			
+			controlador.eliminarRespuestaOpinion("Tienda1", 0)
+			expect(controlador.getOpiniones(t1)[0].tieneRespuesta()).to.equal(false);
 		})
 	})
 })
