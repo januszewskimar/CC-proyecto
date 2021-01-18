@@ -6,7 +6,7 @@ import {ExcepcionUsuarioYaExiste} from '../ExcepcionUsuarioYaExiste';
 
 var request = require('supertest');
 
-describe('POST /opiniones', function() {
+describe('POST /tiendas/:tienda/opiniones', function() {
   it('Publica una opinión correcta', function(done) {
     var data = { "nombreUsuario": "david", "titulo": "Bien", "valoracionNumerica": "5", "descripcion": "Todo muy bien" }
     request(app)
