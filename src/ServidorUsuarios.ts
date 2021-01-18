@@ -6,12 +6,13 @@ import { ExcepcionNombreUsuarioIncorrecto } from "./ExcepcionNombreUsuarioIncorr
 import { ExcepcionCorreoIncorrecto } from "./ExcepcionCorreoIncorrecto";
 
 var app = express();
+app.use(express.json());
 
 var controlador:ControladorUsuarios = new ControladorUsuarios();
 
-app.post('/usuario/:nombreUsuario/:correo/:nombre/:apellidos', function (req, res) {
+app.post('/usuarios', function (req, res) {
 	try{
-		var u: Usuario = new Usuario(req.params.nombreUsuario, req.params.correo, req.params.nombre, req.params.apellidos);
+		var u: Usuario = new Usuario(req.body.nombreUsuario, req.body.correo, req.body.nombre, req.body.apellidos);
 		controlador.addUsuario(u);
 		res.status(200).send("Usuario creado");
 	} catch (err) {
