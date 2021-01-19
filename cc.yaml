@@ -3,10 +3,8 @@ lenguaje: TypeScript
 entidad:
   - src/AdministradorTienda.ts
   - src/Opinion.ts
-  - src/ControladorOpiniones.ts
   - src/Tienda.ts
   - src/Usuario.ts
-  - src/ControladorUsuarios.ts
   - src/ValidacionDatos.ts
   - src/RespuestaOpinion.ts
   - src/ExcepcionCorreoIncorrecto.ts
@@ -14,13 +12,23 @@ entidad:
   - src/ExcepcionNombreUsuarioIncorrecto.ts
   - src/ExcepcionTelefonoIncorrecto.ts
   - src/ExcepcionUsuarioYaExiste.ts
+  - src/ExcepcionOpinionNoExiste.ts
+  - src/ExcepcionRespuestaOpinionNoExiste.ts
+  - src/ExcepcionValoracionNumericaIncorrecta.ts
+  - src/ControladorUsuarios.ts
+  - src/ControladorOpiniones.ts
+  - src/ServidorUsuarios.ts
+  - src/ServidorOpiniones.ts
 test:
   - src/test/AdministradorTienda.ts
   - src/test/Opinion.ts
-  - src/test/ControladorOpiniones.ts
+  - src/test/RespuestaOpinion.ts
   - src/test/Tienda.ts
   - src/test/Usuario.ts
+  - src/test/ControladorOpiniones.ts
   - src/test/ControladorUsuarios.ts
-  - src/test/RespuestaOpinion.ts
+  - src/test/ServidorUsuarios.ts
+  - src/test/ServidorOpiniones.ts
 fichero_tareas: Gruntfile.js
+make: grunt
 
