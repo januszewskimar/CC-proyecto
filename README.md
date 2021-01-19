@@ -23,7 +23,7 @@ Para elegir un framework para mi proyecto, he consultado varias páginas para ve
 
 ## Diseño del API, las rutas, test
 
-He creado dos API: [ServidorUsuarios](src/ServidorUsuarios.ts) y [ServidorOpiniones](src/ServidorOpiniones.ts). En las funciones del API se llama a funciones del controlador correspondiente, lo que desacopla la lógica de negocio de la API. También he creado [test de ServidorUsuarios](src/test/ServidorUsuarios.ts) y [test de ServidorOpiniones](src/test/ServidorUsuarios.ts).
+He creado dos API: [ServidorUsuarios](src/ServidorUsuarios.ts) y [ServidorOpiniones](src/ServidorOpiniones.ts). En las funciones del API se llama a funciones del controlador correspondiente, lo que desacopla la lógica de negocio de la API. También he creado [test de ServidorUsuarios](src/test/ServidorUsuarios.ts) y [test de ServidorOpiniones](src/test/ServidorOpiniones.ts).
 
 En [ServidorUsuarios](src/ServidorUsuarios.ts) he incluido la funcionalidad de registrar un usuario:
 
@@ -81,7 +81,7 @@ Ficheros:
 * [ServidorUsuarios](src/ServidorUsuarios.ts)
 * [Test de ServidorUsuarios](src/test/ServidorUsuarios.ts)
 * [ServidorOpiniones](src/ServidorOpiniones.ts)
-* [Test de ServidorOpiniones](src/test/ServidorUsuarios.ts)
+* [Test de ServidorOpiniones](src/test/ServidorOpiniones.ts)
 
 ### Opinion
 
