@@ -28,7 +28,7 @@ He creado dos API: [ServidorUsuarios](src/ServidorUsuarios.ts) y [ServidorOpinio
 
 ### ServidorUsuario
 
-En [ServidorUsuarios](src/ServidorUsuarios.ts) he incluido la funcionalidad de registrar un usuario y los [test correspondientes](src/test/ServidorUsuarios.ts).
+En [ServidorUsuarios](src/ServidorUsuarios.ts) he incluido la petición de registrar un usuario y he programado [test de esta](src/test/ServidorUsuarios.ts).
 
 #### POST /usuarios
 
@@ -43,7 +43,7 @@ Esta petición sirve para crear un nuevo usuario. En el cuerpo se envían todos 
 
 ### ServidorOpiniones
 
-En [ServidorOpiniones](src/ServidorOpiniones.ts) he creado varias peticiones de distintos tipos con [los test de cada una de ellas](src/test/ServidorOpiniones.ts).
+En [ServidorOpiniones](src/ServidorOpiniones.ts) he creado varias peticiones de distintos tipos. He creado [test de cada una de ellas](src/test/ServidorOpiniones.ts).
 
 #### POST /tiendas/:tienda/opiniones
 
