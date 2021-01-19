@@ -21,9 +21,9 @@ Hoy día hay muchas personas que desean realizar compras en línea. También exi
 Para elegir un framework para mi proyecto, he consultado varias páginas para ver las mejores opciones. Finalmente, me he quedado con los que más se mencionan: Express, Koa y Hapi. He mirado las características, códigos de ejemplo y resultó que en todos se programaba de manera parecida. Es cierto que Hapi tiene el mejor rendimiento, pero he optado por Express, dado que es más sencillo que los otros, se escribe menos código y es más intuitivo. Además, es el framework más popular, hay muchos recursos en Internet para aprender, resolver errores y tiene una gran comunidad de usuarios que ofrecen soporte. Además, se ofrece una documentación detallada para Express.
 
 
-## Diseño en general del API, las rutas (o tareas), tests y documentación de todo, justificando como se ajustan a las historias de usuario, de forma que reflejen correctamente un diseño por capas que desacopla la lógica de negocio del API.
+## Diseño del API, las rutas, test
 
-He creado dos API: [ServidorUsuarios](src/ServidorUsuarios.ts) y [ServidorOpiniones](src/ServidorOpiniones.ts). En las funciones del API se llama a funciones del controlador correspondiente, lo que desacopla la lógica de negocio de la API.
+He creado dos API: [ServidorUsuarios](src/ServidorUsuarios.ts) y [ServidorOpiniones](src/ServidorOpiniones.ts). En las funciones del API se llama a funciones del controlador correspondiente, lo que desacopla la lógica de negocio de la API. También he creado [test de ServidorUsuarios](src/test/ServidorUsuarios.ts) y [test de ServidorOpiniones](src/test/ServidorUsuarios.ts).
 
 En [ServidorUsuarios](src/ServidorUsuarios.ts) he incluido la funcionalidad de registrar un usuario:
 
@@ -72,6 +72,16 @@ Mediante esta petición se suprime una respuesta a una opinión sobre una tienda
 ![DELETE Respuesta Opinión](docs/imgs/test-rutas/delete-respuesta.png)
 
 ## Avance en el proyecto
+
+### API
+
+Como se ha comentado en la sección anterior.
+
+Ficheros:
+* [ServidorUsuarios](src/ServidorUsuarios.ts)
+* [Test de ServidorUsuarios](src/test/ServidorUsuarios.ts)
+* [ServidorOpiniones](src/ServidorOpiniones.ts)
+* [Test de ServidorOpiniones](src/test/ServidorUsuarios.ts)
 
 ### Opinion
 
