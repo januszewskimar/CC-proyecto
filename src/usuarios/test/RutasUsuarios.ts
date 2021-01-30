@@ -1,6 +1,6 @@
 import 'mocha';
 import 'supertest';
-import app from '../ServidorUsuarios'; 
+import app from '../RutasUsuarios'; 
 
 var request = require('supertest');
 
