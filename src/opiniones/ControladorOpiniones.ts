@@ -1,11 +1,11 @@
-import { Opinion } from './Opinion';
-import { RespuestaOpinion } from './RespuestaOpinion';
-import { AdministradorTienda } from './AdministradorTienda';
-import { Tienda } from './Tienda';
-import { Usuario } from './Usuario';
-import { ExcepcionNoHayOpiniones } from './ExcepcionNoHayOpiniones';
-import { ExcepcionOpinionNoExiste } from './ExcepcionOpinionNoExiste';
-import { ExcepcionRespuestaOpinionNoExiste } from './ExcepcionRespuestaOpinionNoExiste';
+import { Opinion } from '../entidades/Opinion';
+import { RespuestaOpinion } from '../entidades/RespuestaOpinion';
+import { AdministradorTienda } from '../entidades/AdministradorTienda';
+import { Tienda } from '../entidades/Tienda';
+import { Usuario } from '../entidades/Usuario';
+import { ExcepcionNoHayOpiniones } from '../excepciones/ExcepcionNoHayOpiniones';
+import { ExcepcionOpinionNoExiste } from '../excepciones/ExcepcionOpinionNoExiste';
+import { ExcepcionRespuestaOpinionNoExiste } from '../excepciones/ExcepcionRespuestaOpinionNoExiste';
 
 
 export class ControladorOpiniones{

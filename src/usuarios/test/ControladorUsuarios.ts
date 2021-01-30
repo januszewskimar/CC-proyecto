@@ -1,8 +1,8 @@
 import 'mocha';
 import { ControladorUsuarios } from '../ControladorUsuarios';
-import { Usuario } from '../Usuario';
-import { Opinion } from '../Opinion';
-import { ExcepcionUsuarioYaExiste } from '../ExcepcionUsuarioYaExiste';
+import { Usuario } from '../../entidades/Usuario';
+import { Opinion } from '../../entidades/Opinion';
+import { ExcepcionUsuarioYaExiste } from '../../excepciones/ExcepcionUsuarioYaExiste';
 import { expect } from 'chai';
 
 describe('ControladorUsuarios', function(){

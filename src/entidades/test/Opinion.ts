@@ -4,7 +4,7 @@ import { Opinion } from '../Opinion';
 import { AdministradorTienda } from '../AdministradorTienda';
 import { Tienda } from '../Tienda';
 import { Usuario } from '../Usuario';
-import { ExcepcionValoracionNumericaIncorrecta } from '../ExcepcionValoracionNumericaIncorrecta';
+import { ExcepcionValoracionNumericaIncorrecta } from '../../excepciones/ExcepcionValoracionNumericaIncorrecta';
 
 describe('Opinion', function(){
 	describe('Carga', function(){

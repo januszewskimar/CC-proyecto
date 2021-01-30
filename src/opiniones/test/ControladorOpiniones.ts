@@ -1,13 +1,13 @@
 import 'mocha';
 import { ControladorOpiniones } from '../ControladorOpiniones';
-import { AdministradorTienda } from '../AdministradorTienda';
-import { Tienda } from '../Tienda'; 
-import { Usuario } from '../Usuario';
-import { Opinion } from '../Opinion';
-import { RespuestaOpinion } from '../RespuestaOpinion';
-import { ExcepcionNoHayOpiniones } from '../ExcepcionNoHayOpiniones';
-import { ExcepcionOpinionNoExiste } from '../ExcepcionOpinionNoExiste';
-import { ExcepcionRespuestaOpinionNoExiste } from '../ExcepcionRespuestaOpinionNoExiste';
+import { AdministradorTienda } from '../../entidades/AdministradorTienda';
+import { Tienda } from '../../entidades/Tienda'; 
+import { Usuario } from '../../entidades/Usuario';
+import { Opinion } from '../../entidades/Opinion';
+import { RespuestaOpinion } from '../../entidades/RespuestaOpinion';
+import { ExcepcionNoHayOpiniones } from '../../excepciones/ExcepcionNoHayOpiniones';
+import { ExcepcionOpinionNoExiste } from '../../excepciones/ExcepcionOpinionNoExiste';
+import { ExcepcionRespuestaOpinionNoExiste } from '../../excepciones/ExcepcionRespuestaOpinionNoExiste';
 import { expect } from 'chai';
 
 describe('ControladorOpiniones', function(){

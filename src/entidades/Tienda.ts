@@ -1,7 +1,7 @@
 import { AdministradorTienda } from "./AdministradorTienda";
 import { Opinion } from "./Opinion";
-import { ValidacionDatos } from "./ValidacionDatos";
-import { ExcepcionTelefonoIncorrecto } from "./ExcepcionTelefonoIncorrecto";
+import { ValidacionDatos } from "../ValidacionDatos";
+import { ExcepcionTelefonoIncorrecto } from "../excepciones/ExcepcionTelefonoIncorrecto";
 
 export class Tienda{
 	private nombre: string;

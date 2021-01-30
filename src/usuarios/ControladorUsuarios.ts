@@ -1,5 +1,5 @@
-import { Usuario } from './Usuario';
-import { ExcepcionUsuarioYaExiste } from './ExcepcionUsuarioYaExiste';
+import { Usuario } from '../entidades/Usuario';
+import { ExcepcionUsuarioYaExiste } from '../excepciones/ExcepcionUsuarioYaExiste';
 
 export class ControladorUsuarios{
 	private usuarios: Usuario[] = [];

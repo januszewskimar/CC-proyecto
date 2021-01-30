@@ -1,10 +1,10 @@
 import express = require('express');
-import { Usuario } from "./Usuario";
+import { Usuario } from "../entidades/Usuario";
 import { ControladorOpiniones } from "./ControladorOpiniones";
-import { ExcepcionValoracionNumericaIncorrecta } from "./ExcepcionValoracionNumericaIncorrecta";
-import { ExcepcionNoHayOpiniones } from "./ExcepcionNoHayOpiniones";
-import { ExcepcionOpinionNoExiste } from "./ExcepcionOpinionNoExiste";
-import { ExcepcionRespuestaOpinionNoExiste } from "./ExcepcionRespuestaOpinionNoExiste";
+import { ExcepcionValoracionNumericaIncorrecta } from "../excepciones/ExcepcionValoracionNumericaIncorrecta";
+import { ExcepcionNoHayOpiniones } from "../excepciones/ExcepcionNoHayOpiniones";
+import { ExcepcionOpinionNoExiste } from "../excepciones/ExcepcionOpinionNoExiste";
+import { ExcepcionRespuestaOpinionNoExiste } from "../excepciones/ExcepcionRespuestaOpinionNoExiste";
 
 var app = express();
 app.use(express.json());

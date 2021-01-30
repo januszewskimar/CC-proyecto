@@ -1,7 +1,7 @@
 import { Tienda } from "./Tienda";
 import { Usuario } from "./Usuario";
 import { RespuestaOpinion } from "./RespuestaOpinion";
-import { ExcepcionValoracionNumericaIncorrecta } from "./ExcepcionValoracionNumericaIncorrecta";
+import { ExcepcionValoracionNumericaIncorrecta } from "../excepciones/ExcepcionValoracionNumericaIncorrecta";
 
 export class Opinion{
 	tienda: Tienda;

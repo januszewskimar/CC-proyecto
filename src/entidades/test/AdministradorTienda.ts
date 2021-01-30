@@ -1,7 +1,7 @@
 import 'mocha';
 import  {AdministradorTienda} from '../AdministradorTienda'; 
-import  {ExcepcionNombreUsuarioIncorrecto} from '../ExcepcionNombreUsuarioIncorrecto'; 
-import  {ExcepcionCorreoIncorrecto} from '../ExcepcionCorreoIncorrecto'; 
+import  {ExcepcionNombreUsuarioIncorrecto} from '../../excepciones/ExcepcionNombreUsuarioIncorrecto'; 
+import  {ExcepcionCorreoIncorrecto} from '../../excepciones/ExcepcionCorreoIncorrecto'; 
 import {expect} from 'chai';
 
 describe('AdministradorTienda', function(){

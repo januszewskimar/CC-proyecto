@@ -1,6 +1,6 @@
-import { ValidacionDatos } from './ValidacionDatos';
-import { ExcepcionCorreoIncorrecto } from './ExcepcionCorreoIncorrecto';
-import { ExcepcionNombreUsuarioIncorrecto } from './ExcepcionNombreUsuarioIncorrecto';
+import { ValidacionDatos } from '../ValidacionDatos';
+import { ExcepcionCorreoIncorrecto } from '../excepciones/ExcepcionCorreoIncorrecto';
+import { ExcepcionNombreUsuarioIncorrecto } from '../excepciones/ExcepcionNombreUsuarioIncorrecto';
 
 export class Usuario{
 	private nombreUsuario: string;

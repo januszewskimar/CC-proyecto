@@ -1,7 +1,7 @@
 import { Tienda } from "./Tienda";
-import { ValidacionDatos } from "./ValidacionDatos";
-import { ExcepcionNombreUsuarioIncorrecto } from "./ExcepcionNombreUsuarioIncorrecto";
-import { ExcepcionCorreoIncorrecto } from "./ExcepcionCorreoIncorrecto";
+import { ValidacionDatos } from "../ValidacionDatos";
+import { ExcepcionNombreUsuarioIncorrecto } from "../excepciones/ExcepcionNombreUsuarioIncorrecto";
+import { ExcepcionCorreoIncorrecto } from "../excepciones/ExcepcionCorreoIncorrecto";
 
 export class AdministradorTienda{
 	private nombreUsuario: string;

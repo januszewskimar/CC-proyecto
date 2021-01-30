@@ -1,9 +1,9 @@
 import express = require('express');
-import { Usuario } from "./Usuario";
+import { Usuario } from "../entidades/Usuario";
 import { ControladorUsuarios } from "./ControladorUsuarios";
-import { ExcepcionUsuarioYaExiste } from "./ExcepcionUsuarioYaExiste";
-import { ExcepcionNombreUsuarioIncorrecto } from "./ExcepcionNombreUsuarioIncorrecto";
-import { ExcepcionCorreoIncorrecto } from "./ExcepcionCorreoIncorrecto";
+import { ExcepcionUsuarioYaExiste } from "../excepciones/ExcepcionUsuarioYaExiste";
+import { ExcepcionNombreUsuarioIncorrecto } from "../excepciones/ExcepcionNombreUsuarioIncorrecto";
+import { ExcepcionCorreoIncorrecto } from "../excepciones/ExcepcionCorreoIncorrecto";
 
 var app = express();
 app.use(express.json());
