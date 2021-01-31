@@ -100,6 +100,22 @@ Esta petición sirve para eliminar una respuesta a una opinión sobre una tienda
 
 ![DELETE Respuesta Opinión](docs/imgs/test-rutas/delete-respuesta.png)
 
+## Configuración distribuida y logs
+
+### Configuración distribuida
+
+Para implementar la configuración distribuida he elegido etcd3, puesto que es el sistema más popular y dispone de una gran comunidad de usuarios, lo que facilita la resolución de problemas. En los ficheros de configuración primero se intenta obtener el número del puerto mediante etcd. Si no está presente dicha variable, se utiliza la variable de entorno process.env.PORT. Y si esta no está, se utiliza el puerto 8080. Los ficheros de configuración son los siguientes:
+
+* [ServidorOpiniones](src/opiniones/ServidorOpiniones.ts)
+* [ServidorUsuarios](src/usuarios/ServidorUsuarios.ts)
+
+### Logs
+
+Como logger he considerado Morgan y Winston. He elegido el segundo, dado que los dos presentan características similares y el segundo es más popular, por lo que es más fácil obtener soporte de la comunidad de usuarios. He utilizando el middleware express-winston y lo he configurado de manera que se logueen las peticiones. Los ficheros de configuración son los siguientes:
+
+* [ServidorOpiniones](src/opiniones/ServidorOpiniones.ts)
+* [ServidorUsuarios](src/usuarios/ServidorUsuarios.ts)
+
 ## Avance en el proyecto
 
 ### API
