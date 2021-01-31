@@ -1,6 +1,18 @@
 const { Etcd3 } = require('etcd3');
 const client = new Etcd3();
+import winston = require('winston');
+import expressWinston = require('express-winston');
 import app from "./RutasUsuarios";
+
+app.use(expressWinston.logger({
+      transports: [
+        new winston.transports.Console()
+      ],
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.json()
+      )
+}));
 
 (async() => {
 	var puerto = await client.get('puerto').string();
