@@ -8,9 +8,9 @@ export class Tienda{
 	private nombre: string;
 	private direccion: string;
 	private telefono: string;
-	private administrador: AdministradorTienda;
+	private administrador: string;
 	
-	constructor (nombre: string, direccion: string, telefono: string, administrador: AdministradorTienda){
+	constructor (nombre: string, direccion: string, telefono: string, administrador: string){
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.setTelefono(telefono);
