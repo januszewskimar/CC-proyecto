@@ -4,6 +4,7 @@ import { ValidacionDatos } from "../ValidacionDatos";
 import { ExcepcionTelefonoIncorrecto } from "../excepciones/ExcepcionTelefonoIncorrecto";
 
 export class Tienda{
+	private id: number;
 	private nombre: string;
 	private direccion: string;
 	private telefono: string;
@@ -14,6 +15,14 @@ export class Tienda{
 		this.direccion = direccion;
 		this.setTelefono(telefono);
 		this.administrador = administrador;
+	}
+	
+	getId(){
+		return this.id;
+	}
+	
+	setId(id: number){
+		this.id = id;
 	}
 	
 	setTelefono(telefono: string) {
