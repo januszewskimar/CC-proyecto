@@ -11,7 +11,7 @@ describe ('Rutas de Tiendas', function(){
       request(app)
         .post('/tiendas')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200, done);
     });
   
@@ -20,7 +20,7 @@ describe ('Rutas de Tiendas', function(){
       request(app)
         .post('/tiendas')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(400, done);
     });
   });

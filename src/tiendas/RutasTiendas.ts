@@ -11,14 +11,14 @@ var controlador:ControladorTiendas = new ControladorTiendas();
 app.post('/tiendas', function (req, res) {
 	try{
 		var t = new Tienda(req.body.nombre, req.body.direccion, req.body.telefono, req.body.administrador);
-		controlador.addTienda(t);
-		res.status(200).send("Tienda creada");
+		t = controlador.addTienda(t);
+		res.status(200).send(t);
 	} catch (err) {
 		if (err instanceof ExcepcionTelefonoIncorrecto){
-			res.status(400).send("Teléfono incorrecto");
+			res.status(400).send({"error": "Teléfono incorrecto"});
 		}
 		else{
-			res.status(500).send("Error no especificado");
+			res.status(500).send({"error": "Error no especificado"});
 		}
 	}
 });

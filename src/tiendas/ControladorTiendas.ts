@@ -7,7 +7,7 @@ export class ControladorTiendas{
 	
 	}
 	
-	addTienda(t: Tienda){
+	addTienda(t: Tienda): Tienda{
 		let max = 0;
 		for (let i = 0 ; i < this.tiendas.length ; i++){
 			if (this.tiendas[i].getId() > max){
@@ -16,5 +16,6 @@ export class ControladorTiendas{
 		}
 		t.setId(max+1);
 		this.tiendas.push(t);
+		return t;
 	}
 }

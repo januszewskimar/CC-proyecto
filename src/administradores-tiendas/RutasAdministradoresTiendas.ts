@@ -14,19 +14,19 @@ app.post('/administradores-tiendas', function (req, res) {
 	try{
 		var at: AdministradorTienda = new AdministradorTienda(req.body.nombreUsuario, req.body.correo, req.body.nombre, req.body.apellidos);
 		controlador.addAdministrador(at);
-		res.status(200).send("Administrador de tienda creado");
+		res.status(200).send(at);
 	} catch (err) {
 		if (err instanceof ExcepcionNombreUsuarioIncorrecto){
-			res.status(400).send("Nombre de usuario incorrecto");
+			res.status(400).send({"error": "Nombre de usuario incorrecto"});
 		}
 		else if (err instanceof ExcepcionCorreoIncorrecto){
-			res.status(400).send("Correo electrónico incorrecto");
+			res.status(400).send({"error": "Correo electrónico incorrecto"});
 		}
 		else if (err instanceof ExcepcionUsuarioYaExiste){
-			res.status(409).send("Ya existe un administrador con este nombre de usuario");
+			res.status(409).send({"error": "Ya existe un administrador con este nombre de usuario"});
 		}
 		else{
-			res.status(500).send("Error no especificado");
+			res.status(500).send({"error": "Error no especificado"});
 		}
 	}
 });
