@@ -138,7 +138,6 @@ describe('ControladorOpiniones', function(){
 			
 			let r: RespuestaOpinion = op1.getRespuesta();
 			
-			expect(r.getOpinion()).to.equal(op1);
 			expect(r.getContenido()).to.equal("No estamos de acuerdo");
 		})
 		
@@ -155,7 +154,6 @@ describe('ControladorOpiniones', function(){
 			expect(op1.tieneRespuesta()).to.equal(true);
 			
 			let r: RespuestaOpinion = op1.getRespuesta();
-			expect(r.getOpinion()).to.equal(op1);
 			expect(r.getContenido()).to.equal("Perdón por los inconvenientes");
 		})
 	})

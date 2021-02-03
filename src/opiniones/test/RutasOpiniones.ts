@@ -12,7 +12,7 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/1/opiniones')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200, done);
     });
   
@@ -21,7 +21,7 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/1/opiniones')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(400, done);
     });
   });
@@ -43,7 +43,7 @@ describe('Rutas de Opiniones', function(){
     it('Devuelve error si se quiere obtener la valoración media de una tienda sobre la que no hay opiniones', function(done) {
       request(app)
         .get('/tiendas/3/valoracion-media')
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(406, done);
     });
   
@@ -52,12 +52,12 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/4/opiniones')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200)
         .end(function(){
           request(app)
             .get('/tiendas/4/valoracion-media')
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(200, done);
         });
     });
@@ -71,12 +71,12 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/5/opiniones')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200)
         .end(function(){
           request(app)
             .delete('/tiendas/5/opiniones/0')
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(200, done)
         });
     });
@@ -84,7 +84,7 @@ describe('Rutas de Opiniones', function(){
     it('Devuelve error si se intenta eliminar una opinión inexistente', function(done) {
       request(app)
         .delete('/tiendas/6/opiniones/241')
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(404, done);
     });
   });
@@ -97,7 +97,7 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .put('/tiendas/7/opiniones/0/respuesta')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(404, done);
     });
   
@@ -107,13 +107,13 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/8/opiniones')
         .send(data1)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200)
         .end(function(){
           request(app)
             .put('/tiendas/8/opiniones/0/respuesta')
             .send(data2)
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(200, done);
         });
     });
@@ -127,7 +127,7 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .delete('/tiendas/9/opiniones/0/respuesta')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(404, done);
     });
     
@@ -137,12 +137,12 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/10/opiniones')
         .send(data1)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200)
         .end(function(){
           request(app)
             .delete('/tiendas/10/opiniones/0/respuesta')
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(404, done);
           });
       });
@@ -153,18 +153,18 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .post('/tiendas/11/opiniones')
         .send(data1)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200)
         .end(function(){
           request(app)
             .put('/tiendas/11/opiniones/0/respuesta')
             .send(data2)
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(200)
             .end(function(){
               request(app)
                 .delete('/tiendas/11/opiniones/0/respuesta')
-                .expect('Content-Type', /text/)
+                .expect('Content-Type', /json/)
                 .expect(200, done);
               });
           });

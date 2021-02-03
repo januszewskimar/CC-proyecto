@@ -25,13 +25,13 @@ export class ControladorOpiniones{
 		this.opiniones.push(op);
 	}
 	
-	publicarOpinion(nombreUsuario: string, tienda: number, titulo: string, valoracionNumerica: number, descripcion: string){
+	publicarOpinion(nombreUsuario: string, tienda: number, titulo: string, valoracionNumerica: number, descripcion: string): Opinion{
 		var o: Opinion = new Opinion(tienda, new Date(Date.now()), nombreUsuario, titulo, valoracionNumerica, descripcion);
-		
 		this.addOpinion(o);
+		return o;
 	}
 	
-	publicarRespuesta(tienda: number, id: number, contenido: string) {
+	publicarRespuesta(tienda: number, id: number, contenido: string): RespuestaOpinion {
 		for (let i = 0 ; i < this.opiniones.length ; i++){
 			if ( (this.opiniones[i].getTienda() == tienda) && (this.opiniones[i].getId() == id) ){
 				var op = this.opiniones[i];
@@ -39,10 +39,10 @@ export class ControladorOpiniones{
 					op.getRespuesta().setContenido(contenido);
 				}
 				else{
-					var r: RespuestaOpinion = new RespuestaOpinion (op, new Date(Date.now()), contenido);
+					var r: RespuestaOpinion = new RespuestaOpinion (new Date(Date.now()), contenido);
 					op.setRespuesta(r);
 				}
-				return;
+				return op.getRespuesta();
 			}
 		}
 		throw new ExcepcionOpinionNoExiste();
