@@ -23,11 +23,9 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let adt2 = new AdministradorTienda("juanfer", "juanfer@correo.es", "Juan", "Fernández");
 			let t2: Tienda = new Tienda("Tienda2", "Calle B 1B", "987654321", adt2);
-			adt2.setTienda(t2);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let u2 = new Usuario("carmad", "carmad@correo.es", "Carolina", "Madrid");
@@ -55,11 +53,9 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let adt2 = new AdministradorTienda("juanfer", "juanfer@correo.es", "Juan", "Fernández");
 			let t2: Tienda = new Tienda("Tienda2", "Calle B 1B", "987654321", adt2);
-			adt2.setTienda(t2);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let u2 = new Usuario("carmad", "carmad@correo.es", "Carolina", "Madrid");
@@ -78,11 +74,9 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let adt2 = new AdministradorTienda("juanfer", "juanfer@correo.es", "Juan", "Fernández");
 			let t2: Tienda = new Tienda("Tienda2", "Calle B 1B", "987654321", adt2);
-			adt2.setTienda(t2);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let u2 = new Usuario("carmad", "carmad@correo.es", "Carolina", "Madrid");
@@ -108,11 +102,9 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let adt2 = new AdministradorTienda("juanfer", "juanfer@correo.es", "Juan", "Fernández");
 			let t2: Tienda = new Tienda("Tienda2", "Calle B 1B", "987654321", adt2);
-			adt2.setTienda(t2);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let u2 = new Usuario("carmad", "carmad@correo.es", "Carolina", "Madrid");
@@ -143,11 +135,9 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let adt2 = new AdministradorTienda("juanfer", "juanfer@correo.es", "Juan", "Fernández");
 			let t2: Tienda = new Tienda("Tienda2", "Calle B 1B", "987654321", adt2);
-			adt2.setTienda(t2);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let u2 = new Usuario("carmad", "carmad@correo.es", "Carolina", "Madrid");
@@ -180,7 +170,6 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
@@ -195,7 +184,6 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
@@ -217,7 +205,6 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
@@ -242,7 +229,6 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
@@ -259,7 +245,6 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
@@ -274,7 +259,6 @@ describe('ControladorOpiniones', function(){
 			
 			let adt1 = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let t1 = new Tienda("Tienda1", "Calle A 1A", "123456789", adt1);
-			adt1.setTienda(t1);
 			
 			let u1 = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			

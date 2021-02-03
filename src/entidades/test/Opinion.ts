@@ -17,7 +17,6 @@ describe('Opinion', function(){
 		it('Lanza una excepción si no es un número entero', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
 			expect(() => {new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 1.5, 'Todo correcto')}).to.throw(ExcepcionValoracionNumericaIncorrecta);
@@ -26,7 +25,6 @@ describe('Opinion', function(){
 		it('Lanza una excepción si es menor que 1', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
 			expect(() => {new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 0, 'Todo correcto')}).to.throw(ExcepcionValoracionNumericaIncorrecta);
@@ -35,7 +33,6 @@ describe('Opinion', function(){
 		it('Lanza una excepción si es mayor que 5', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			
 			expect(() => {new Opinion(tienda, new Date(Date.now()), usuario, 'Buena tienda', 6 , 'Todo correcto')}).to.throw(ExcepcionValoracionNumericaIncorrecta);
@@ -48,7 +45,6 @@ describe('Opinion', function(){
 		it('Crea correctamente una opinión con datos correctos', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let fecha = new Date(Date.now());
 			let opinion = new Opinion(tienda, fecha, usuario, 'Buena tienda', 4 , 'Todo correcto');
@@ -66,7 +62,6 @@ describe('Opinion', function(){
 		it('Edita el título de una opinión', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let fechaCreacion = new Date(Date.now());
 			let opinion = new Opinion(tienda, fechaCreacion, usuario, 'Buena tienda', 4 , 'Todo correcto');
@@ -88,7 +83,6 @@ describe('Opinion', function(){
 		it('Edita la valoración numérica de una opinión', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let fechaCreacion = new Date(Date.now());
 			let opinion = new Opinion(tienda, fechaCreacion, usuario, 'Buena tienda', 4 , 'Todo correcto');
@@ -110,7 +104,6 @@ describe('Opinion', function(){
 		it('Edita la descripción de una opinión', function(){
 			let admin = new AdministradorTienda("anagar", "anagar@correo.es", "Ana", "García");
 			let tienda = new Tienda("Tienda1", "Calle A 1A", "123456789", admin);
-			admin.setTienda(tienda);
 			let usuario = new Usuario("maralv", "maralv@correo.es", "Marcos", "Álvarez");
 			let fechaCreacion = new Date(Date.now());
 			let opinion = new Opinion(tienda, fechaCreacion, usuario, 'Buena tienda', 4 , 'Todo correcto');

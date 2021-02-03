@@ -8,7 +8,6 @@ export class AdministradorTienda{
 	private correo: string;
 	private nombre: string;
 	private apellidos: string;
-	private tienda: Tienda;
 	
 	constructor (nombreUsuario: string, correo: string, nombre: string, apellidos: string){
 		this.setNombreUsuario(nombreUsuario);
@@ -32,11 +31,7 @@ export class AdministradorTienda{
 
 		this.nombreUsuario = nombreUsuario;
 	}
-	
-	setTienda(tienda: Tienda){
-		this.tienda = tienda;
-	}
-	
+
 	getNombreUsuario(){
 		return this.nombreUsuario;
 	}
@@ -51,9 +46,5 @@ export class AdministradorTienda{
 	
 	getApellidos(){
 		return this.apellidos;
-	}
-	
-	getTienda(){
-		return this.tienda;
 	}
 }
