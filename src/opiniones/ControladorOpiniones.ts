@@ -1,8 +1,5 @@
 import { Opinion } from '../entidades/Opinion';
 import { RespuestaOpinion } from '../entidades/RespuestaOpinion';
-import { AdministradorTienda } from '../entidades/AdministradorTienda';
-import { Tienda } from '../entidades/Tienda';
-import { Usuario } from '../entidades/Usuario';
 import { ExcepcionNoHayOpiniones } from '../excepciones/ExcepcionNoHayOpiniones';
 import { ExcepcionOpinionNoExiste } from '../excepciones/ExcepcionOpinionNoExiste';
 import { ExcepcionRespuestaOpinionNoExiste } from '../excepciones/ExcepcionRespuestaOpinionNoExiste';
@@ -18,7 +15,7 @@ export class ControladorOpiniones{
 	addOpinion(op: Opinion){
 		var id = -1;
 		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if (this.opiniones[i].getTienda().getNombre() == op.getTienda().getNombre()){
+			if (this.opiniones[i].getTienda() == op.getTienda()){
 				if (this.opiniones[i].getId() > id){
 					id = this.opiniones[i].getId();
 				}
@@ -28,19 +25,15 @@ export class ControladorOpiniones{
 		this.opiniones.push(op);
 	}
 	
-	publicarOpinion(nombreUsuario, tienda, titulo, valoracionNumerica, descripcion){
-		var at: AdministradorTienda = new AdministradorTienda ("at1", "at1@tienda1.es", "Juan", "Delgado Sánchez");
-		var t: Tienda = new Tienda (tienda, "Calle 123", "123456789", at);
-		var u: Usuario = new Usuario (nombreUsuario, "abc@mail.es", "Marcos", "González Pérez");
-		
-		var o: Opinion = new Opinion(t, new Date(Date.now()), u, titulo, valoracionNumerica, descripcion);
+	publicarOpinion(nombreUsuario: string, tienda: number, titulo: string, valoracionNumerica: number, descripcion: string){
+		var o: Opinion = new Opinion(tienda, new Date(Date.now()), nombreUsuario, titulo, valoracionNumerica, descripcion);
 		
 		this.addOpinion(o);
 	}
 	
-	publicarRespuesta(tienda: string, id: number, contenido: string) {
+	publicarRespuesta(tienda: number, id: number, contenido: string) {
 		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if ( (this.opiniones[i].getTienda().getNombre() == tienda) && (this.opiniones[i].getId() == id) ){
+			if ( (this.opiniones[i].getTienda() == tienda) && (this.opiniones[i].getId() == id) ){
 				var op = this.opiniones[i];
 				if (op.tieneRespuesta()){
 					op.getRespuesta().setContenido(contenido);
@@ -55,17 +48,7 @@ export class ControladorOpiniones{
 		throw new ExcepcionOpinionNoExiste();
 	}
 	
-	getOpinionesNombreTienda(n: String) : Opinion[]{
-		let resultado: Opinion[] = [];
-		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if (this.opiniones[i].getTienda().getNombre() == n){
-				resultado.push(this.opiniones[i]);
-			}
-		}
-		return resultado;
-	}
-	
-	getOpiniones(t: Tienda) : Opinion[]{
+	getOpinionesTienda(t: number) : Opinion[]{
 		let resultado: Opinion[] = [];
 		for (let i = 0 ; i < this.opiniones.length ; i++){
 			if (this.opiniones[i].getTienda() == t){
@@ -75,11 +58,11 @@ export class ControladorOpiniones{
 		return resultado;
 	}
 	
-	getValoracionMediaTienda(t: string) : number{
+	getValoracionMediaTienda(t: number) : number{
 		let num = 0;
 		let suma = 0;
 		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if (this.opiniones[i].getTienda().getNombre() == t){
+			if (this.opiniones[i].getTienda() == t){
 				num++;
 				suma += this.opiniones[i].getValoracionNumerica();
 			}
@@ -93,9 +76,9 @@ export class ControladorOpiniones{
 		}
 	}
 	
-	eliminarOpinion(tienda: string, id: number) : boolean{
+	eliminarOpinion(tienda: number, id: number) : boolean{
 		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if ( (this.opiniones[i].getTienda().getNombre() == tienda) && (this.opiniones[i].getId() == id) ){
+			if ( (this.opiniones[i].getTienda() == tienda) && (this.opiniones[i].getId() == id) ){
 				this.opiniones.splice(i, 1);
 				return true;
 			}
@@ -103,9 +86,9 @@ export class ControladorOpiniones{
 		return false;
 	}
 	
-	eliminarRespuestaOpinion(tienda: string, id: number){
+	eliminarRespuestaOpinion(tienda: number, id: number){
 		for (let i = 0 ; i < this.opiniones.length ; i++){
-			if ( (this.opiniones[i].getTienda().getNombre() == tienda) && (this.opiniones[i].getId() == id) ){
+			if ( (this.opiniones[i].getTienda() == tienda) && (this.opiniones[i].getId() == id) ){
 				let op = this.opiniones[i];
 				if (op.tieneRespuesta()){
 					op.eliminarRespuesta();

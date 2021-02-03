@@ -4,17 +4,17 @@ import { RespuestaOpinion } from "./RespuestaOpinion";
 import { ExcepcionValoracionNumericaIncorrecta } from "../excepciones/ExcepcionValoracionNumericaIncorrecta";
 
 export class Opinion{
-	tienda: Tienda;
+	tienda: number;
 	id: number;
 	fechaCreacion: Date;
 	fechaEdicion: Date;
-	usuario: Usuario;
+	usuario: string;
 	titulo: string;
 	valoracionNumerica: number;
 	descripcion: string;
 	respuesta: RespuestaOpinion;
 
-	constructor (tienda: Tienda, fechaCreacion: Date, usuario: Usuario, titulo: string, valoracionNumerica: number, descripcion: string){
+	constructor (tienda: number, fechaCreacion: Date, usuario: string, titulo: string, valoracionNumerica: number, descripcion: string){
 		this.tienda = tienda;
 		this.fechaCreacion = fechaCreacion;
 		this.usuario = usuario;
