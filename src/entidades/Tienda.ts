@@ -8,21 +8,12 @@ export class Tienda{
 	private direccion: string;
 	private telefono: string;
 	private administrador: AdministradorTienda;
-	private opiniones: Opinion[]
 	
 	constructor (nombre: string, direccion: string, telefono: string, administrador: AdministradorTienda){
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.setTelefono(telefono);
 		this.administrador = administrador;
-	}
-	
-	aniadirOpinion(opinion: Opinion){
-		this.opiniones.push(opinion);
-	}
-	
-	getOpiniones() : Opinion[] {
-		return this.opiniones;
 	}
 	
 	setTelefono(telefono: string) {
