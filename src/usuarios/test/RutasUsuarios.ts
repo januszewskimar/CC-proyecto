@@ -11,7 +11,7 @@ describe ('ServidorUsuarios', function(){
       request(app)
         .post('/usuarios')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200, done);
     });
   
@@ -21,12 +21,12 @@ describe ('ServidorUsuarios', function(){
       request(app)
         .post('/usuarios')
         .send(data1)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(200).end(function(){
           request(app)
            .post('/usuarios')
            .send(data2)
-           .expect('Content-Type', /text/)
+           .expect('Content-Type', /json/)
            .expect(409, done);});
     });
   
@@ -35,7 +35,7 @@ describe ('ServidorUsuarios', function(){
       request(app)
         .post('/usuarios')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(400, done);
     });
   
@@ -44,7 +44,7 @@ describe ('ServidorUsuarios', function(){
       request(app)
         .post('/usuarios')
         .send(data)
-        .expect('Content-Type', /text/)
+        .expect('Content-Type', /json/)
         .expect(400, done);
     });
   });
