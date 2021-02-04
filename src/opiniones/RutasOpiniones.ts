@@ -37,7 +37,7 @@ app.get('/tiendas/:tienda/valoracion-media', function(req, res) {
 		res.status(200).send({"valoracion-media": resultado});
 	} catch (err) {
 		if (err instanceof ExcepcionNoHayOpiniones){
-			res.status(406).send({"error": "No existen opiniones sobre la tienda"});
+			res.status(404).send({"error": "No existen opiniones sobre la tienda"});
 		}
 		else{
 			res.status(500).send({"error": "Error no especificado"});

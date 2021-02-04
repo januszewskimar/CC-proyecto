@@ -44,7 +44,7 @@ describe('Rutas de Opiniones', function(){
       request(app)
         .get('/tiendas/3/valoracion-media')
         .expect('Content-Type', /json/)
-        .expect(406, done);
+        .expect(404, done);
     });
   
     it('Devuelve la valoración media de una tienda si existen opiniones sobre ella', function(done) {
