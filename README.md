@@ -23,7 +23,7 @@ Para elegir un framework para mi proyecto, he consultado varias páginas para ve
 
 ## Diseño del API, las rutas y test
 
-He creado dos API: [RutasUsuarios](src/usuarios/RutasUsuarios.ts) y [RutasOpiniones](src/opiniones/RutasOpiniones.ts). En las funciones de la API se llama a las funciones del controlador correspondientes, lo que desacopla la lógica de negocio de la API. Para realizar pruebas de las rutas creadas, he creado [test de RutasUsuarios](src/usuarios/test/RutasUsuarios.ts) y [test de RutasOpiniones](src/opiniones/test/RutasOpiniones.ts).
+He creado cuatro API por cada microservicio: [RutasUsuarios](src/usuarios/RutasUsuarios.ts), [RutasAdministradoresTiendas](src/administradores-tiendas/RutasAdministradoresTiendas.ts), [RutasTiendas](src/tiendas/RutasAdministradoresTiendas.ts) y [RutasOpiniones](src/opiniones/RutasOpiniones.ts). En las funciones de la API se llama a las funciones del controlador correspondientes, lo que desacopla la lógica de negocio de la API. Para realizar pruebas de las rutas creadas, he creado [test de RutasUsuarios](src/usuarios/test/RutasUsuarios.ts), [RutasAdministradoresTiendas](src/administradores-tiendas/test/RutasAdministradoresTiendas.ts), [RutasTiendas](src/tiendas/test/RutasAdministradoresTiendas.ts) y [test de RutasOpiniones](src/opiniones/test/RutasOpiniones.ts).
 
 
 ### Rutas de Usuarios
@@ -64,7 +64,7 @@ Historias de usuario:
 
 * [HU7 - Como administrador de una tienda, quiero registrarla en el sistema](https://github.com/januszewskimar/shop-safe/issues/13)
 
-Esta petición sirve para crear una nueva tienda. En el cuerpo se envían todos los datos de la tienda (nombre, dirección, teléfono y nombre de usuario del administrador). Esta petición devuelve 200 si la tienda se ha creado junto con el objeto creado que contiene el identificador asignado y 400 si el teléfono es incorrecto. La función en la API llama al método addTienda de [ControladorTiendas](src/tiendas/ControladorTiendas.ts) que devuelve una excepción correspondiente en caso de error ([ExcepcionTelefonoIncorrecto](src/excepciones/ExcepcionTelefonoIncorrecto.ts). En tal caso se devuelve el motivo del error en la petición. Para testar la ruta he creado dos pruebas para un caso en el que la petición debería devolver una respuesta de éxito y una prueba en caso de proporcionar un número de teléfono incorrecto:
+Esta petición sirve para crear una nueva tienda. En el cuerpo se envían todos los datos de la tienda (nombre, dirección, teléfono y nombre de usuario del administrador). Esta petición devuelve 200 si la tienda se ha creado junto con el objeto creado que contiene el identificador asignado y 400 si el teléfono es incorrecto. La función en la API llama al método addTienda de [ControladorTiendas](src/tiendas/ControladorTiendas.ts) que devuelve una excepción correspondiente en caso de error ([ExcepcionTelefonoIncorrecto](src/excepciones/ExcepcionTelefonoIncorrecto.ts)). En tal caso se devuelve el motivo del error en la petición. Para testar la ruta he creado dos pruebas para un caso en el que la petición debería devolver una respuesta de éxito y una prueba en caso de proporcionar un número de teléfono incorrecto:
 
 ![Rutas Tiendas](docs/imgs/test-rutas/rutas-tiendas.png)
 
@@ -160,10 +160,10 @@ Ficheros:
 * [ServidorUsuarios](src/usuarios/ServidorUsuarios.ts)
 * [RutasAdministradoresTiendas](src/administradores-tiendas/RutasAdministradoresTiendas.ts)
 * [Test de RutasAdministradoresTiendas](src/administradores-tiendas/test/RutasAdministradoresTiendas.ts)
-* [ServidorAdministradoresTiendas](src/administradores-tiendas/test/ServidorAdministradoresTiendas.ts)
+* [ServidorAdministradoresTiendas](src/administradores-tiendas/ServidorAdministradoresTiendas.ts)
 * [RutasTiendas](src/tiendas/RutasTiendas.ts)
-* [Test de Tiendas](src/tiendas/test/RutasTiendas.ts)
-* [ServidorTiendas](src/tiendas/test/ServidorTiendas.ts)
+* [Test de RutasTiendas](src/tiendas/test/RutasTiendas.ts)
+* [ServidorTiendas](src/tiendas/ServidorTiendas.ts)
 * [RutasOpiniones](src/opiniones/RutasOpiniones.ts)
 * [Test de RutasOpiniones](src/opiniones/test/RutasOpiniones.ts)
 * [ServidorOpiniones](src/opiniones/ServidorOpiniones.ts)
