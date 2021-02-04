@@ -23,7 +23,7 @@ Para elegir un framework para mi proyecto, he consultado varias páginas para ve
 
 ## Diseño del API, las rutas y test
 
-He creado cuatro API por cada microservicio: [RutasUsuarios](src/usuarios/RutasUsuarios.ts), [RutasAdministradoresTiendas](src/administradores-tiendas/RutasAdministradoresTiendas.ts), [RutasTiendas](src/tiendas/RutasAdministradoresTiendas.ts) y [RutasOpiniones](src/opiniones/RutasOpiniones.ts). En las funciones de la API se llama a las funciones del controlador correspondientes, lo que desacopla la lógica de negocio de la API. Para realizar pruebas de las rutas creadas, he creado [test de RutasUsuarios](src/usuarios/test/RutasUsuarios.ts), [RutasAdministradoresTiendas](src/administradores-tiendas/test/RutasAdministradoresTiendas.ts), [RutasTiendas](src/tiendas/test/RutasAdministradoresTiendas.ts) y [test de RutasOpiniones](src/opiniones/test/RutasOpiniones.ts).
+He creado cuatro API (una por cada microservicio): [RutasUsuarios](src/usuarios/RutasUsuarios.ts), [RutasAdministradoresTiendas](src/administradores-tiendas/RutasAdministradoresTiendas.ts), [RutasTiendas](src/tiendas/RutasAdministradoresTiendas.ts) y [RutasOpiniones](src/opiniones/RutasOpiniones.ts). En las funciones de la API se llama a las funciones del controlador correspondientes, lo que desacopla la lógica de negocio de la API. Para realizar pruebas de las rutas creadas, he creado [test de RutasUsuarios](src/usuarios/test/RutasUsuarios.ts), [RutasAdministradoresTiendas](src/administradores-tiendas/test/RutasAdministradoresTiendas.ts), [RutasTiendas](src/tiendas/test/RutasAdministradoresTiendas.ts) y [test de RutasOpiniones](src/opiniones/test/RutasOpiniones.ts).
 
 
 ### Rutas de Usuarios
