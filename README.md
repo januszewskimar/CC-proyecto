@@ -187,7 +187,7 @@ Ficheros:
 
 ### ControladorAdministradoresTiendas
 
-Se ha creado el [controlador](src/administradores-tiendas/ControladorAdministradoresTiendas.ts) que contiene el método addAdministrador que recibe un objeto [AdministradorTienda](src/entidades/AdministradorTienda.ts) y lo almacena en caso de que no exista uno ya con el mismo nombre de usuario. En caso de que ya exista, se lanza una excepción [ExcepcionUsuarioYaExiste](src/excepciones/ExcepcionUsuarioYaExiste.ts).
+Se ha creado el [controlador](src/administradores-tiendas/ControladorAdministradoresTiendas.ts) que contiene el método addAdministrador que recibe un objeto [AdministradorTienda](src/entidades/AdministradorTienda.ts) y lo almacena en caso de que no exista uno con el mismo nombre de usuario. En caso de que ya exista, se lanza una excepción [ExcepcionUsuarioYaExiste](src/excepciones/ExcepcionUsuarioYaExiste.ts).
 
 Ficheros:
 * [ControladorAdministradoresTiendas](src/administradores-tiendas/ControladorAdministradoresTiendas.ts)
