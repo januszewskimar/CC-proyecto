@@ -4,7 +4,7 @@ import app from '../RutasUsuarios';
 
 var request = require('supertest');
 
-describe ('ServidorUsuarios', function(){
+describe ('Rutas de Usuarios', function(){
   describe('POST /usuarios', function() {
     it('Crea un usuario correctamente si no existe uno con el nombre especificado', function(done) {
       var data = {"nombreUsuario": "juan", "correo": "juan@correo.com", "nombre": "Juan", "apellidos": "Fernández García"}
