@@ -18,7 +18,7 @@ app.use(expressWinston.logger({
 	var puerto = await client.get('puerto').string();
 
 	if (puerto == null){
-		puerto = process.env.PORT || 8080;
+		puerto = process.env.PORT || 9000;
 	}
 	
 	app.listen(puerto);
