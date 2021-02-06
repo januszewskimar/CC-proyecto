@@ -14,13 +14,15 @@ app.use(expressWinston.logger({
       )
 }));
 
-(async() => {
-	var puerto = await client.get('puerto').string();
+var puerto;
 
-	if (puerto == null){
-		puerto = process.env.PORT || 9003;
-	}
+(async() => {
+	puerto = await client.get('puerto').string();
+})().catch(() => {});
 	
-	app.listen(puerto);
-	console.log('Escuchando en http://127.0.0.1:' + puerto + '/');
-})()
+if (puerto == null){
+	puerto = process.env.PORT || 9003;
+}
+
+app.listen(puerto);
+console.log('Escuchando en http://127.0.0.1:' + puerto + '/');
