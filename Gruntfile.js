@@ -34,7 +34,7 @@ module.exports = function (grunt) {
   grunt.registerTask("build", ["ts"]);
   grunt.registerTask("install", []);
   grunt.registerTask("run-usuarios", ["ts", "run:usuarios"]);
-  grunt.registerTask("run-administadores-tiendas", ["ts", "run:administradoresTiendas"]);
+  grunt.registerTask("run-administradores-tiendas", ["ts", "run:administradoresTiendas"]);
   grunt.registerTask("run-tiendas", ["ts", "run:tiendas"]);
   grunt.registerTask("run-opiniones", ["ts", "run:opiniones"]);
 };
