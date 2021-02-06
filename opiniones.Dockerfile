@@ -85,4 +85,4 @@ RUN npm ci
 
 EXPOSE 9003
     
-CMD ["grunt", "run-usuarios"]
+CMD ["grunt", "run-opiniones"]

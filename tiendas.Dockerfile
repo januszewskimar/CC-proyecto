@@ -85,4 +85,4 @@ RUN npm ci
 
 EXPOSE 9002
     
-CMD ["grunt", "run-usuarios"]
+CMD ["grunt", "run-tiendas"]

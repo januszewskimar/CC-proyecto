@@ -85,4 +85,4 @@ RUN npm ci
 
 EXPOSE 9001
     
-CMD ["grunt", "run-usuarios"]
+CMD ["grunt", "run-administradores-tiendas"]
