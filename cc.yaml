@@ -1,34 +1,46 @@
 ---
 lenguaje: TypeScript
 entidad:
-  - src/AdministradorTienda.ts
-  - src/Opinion.ts
-  - src/Tienda.ts
-  - src/Usuario.ts
   - src/ValidacionDatos.ts
-  - src/RespuestaOpinion.ts
-  - src/ExcepcionCorreoIncorrecto.ts
-  - src/ExcepcionNoHayOpiniones.ts
-  - src/ExcepcionNombreUsuarioIncorrecto.ts
-  - src/ExcepcionTelefonoIncorrecto.ts
-  - src/ExcepcionUsuarioYaExiste.ts
-  - src/ExcepcionOpinionNoExiste.ts
-  - src/ExcepcionRespuestaOpinionNoExiste.ts
-  - src/ExcepcionValoracionNumericaIncorrecta.ts
-  - src/ControladorUsuarios.ts
-  - src/ControladorOpiniones.ts
-  - src/ServidorUsuarios.ts
-  - src/ServidorOpiniones.ts
+  - src/entidades/AdministradorTienda.ts
+  - src/entidades/Opinion.ts
+  - src/entidades/RespuestaOpinion.ts
+  - src/entidades/Tienda.ts
+  - src/entidades/Usuario.ts
+  - src/excepciones/ExcepcionCorreoIncorrecto.ts
+  - src/excepciones/ExcepcionNoHayOpiniones.ts
+  - src/excepciones/ExcepcionNombreUsuarioIncorrecto.ts
+  - src/excepciones/ExcepcionOpinionNoExiste.ts
+  - src/excepciones/ExcepcionRespuestaOpinionNoExiste.ts
+  - src/excepciones/ExcepcionTelefonoIncorrecto.ts
+  - src/excepciones/ExcepcionUsuarioYaExiste.ts
+  - src/excepciones/ExcepcionValoracionNumericaIncorrecta.ts
+  - src/usuarios/ControladorUsuarios.ts
+  - src/usuarios/RutasUsuarios.ts
+  - src/usuarios/ServidorUsuarios.ts
+  - src/administradores-tiendas/ControladorAdministradoresTiendas.ts
+  - src/administradores-tiendas/RutasAdministradoresTiendas.ts
+  - src/administradores-tiendas/ServidorAdministradoresTiendas.ts
+  - src/tiendas/ControladorTiendas.ts
+  - src/tiendas/RutasTiendas.ts
+  - src/tiendas/ServidorTiendas.ts
+  - src/opiniones/ControladorOpiniones.ts
+  - src/opiniones/RutasOpiniones.ts
+  - src/opiniones/ServidorOpiniones.ts
 test:
-  - src/test/AdministradorTienda.ts
-  - src/test/Opinion.ts
-  - src/test/RespuestaOpinion.ts
-  - src/test/Tienda.ts
-  - src/test/Usuario.ts
-  - src/test/ControladorOpiniones.ts
-  - src/test/ControladorUsuarios.ts
-  - src/test/ServidorUsuarios.ts
-  - src/test/ServidorOpiniones.ts
+  - src/entidades/test/AdministradorTienda.ts
+  - src/entidades/test/Opinion.ts
+  - src/entidades/test/RespuestaOpinion.ts
+  - src/entidades/test/Tienda.ts
+  - src/entidades/test/Usuario.ts
+  - src/usuarios/test/ControladorUsuarios.ts
+  - src/usuarios/test/RutasUsuarios.ts
+  - src/administradores-tiendas/test/ControladorAdministradoresTiendas.ts
+  - src/administradores-tiendas/test/RutasAdministradoresTiendas.ts
+  - src/tiendas/test/ControladorTiendas.ts
+  - src/tiendas/test/RutasTiendas.ts
+  - src/opiniones/test/ControladorOpiniones.ts
+  - src/opiniones/test/RutasOpiniones.ts
 fichero_tareas: Gruntfile.js
 make: grunt
 
