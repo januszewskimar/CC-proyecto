@@ -138,7 +138,7 @@ He creado un fichero de configuración para cada API de rutas. En estos ficheros
 
 ### Configuración distribuida
 
-Para implementar la configuración distribuida he elegido etcd3, puesto que es el sistema más popular y dispone de una gran comunidad de usuarios, lo que facilita la resolución de problemas. En los ficheros de configuración primero se intenta obtener el número del puerto mediante etcd. Si no está presente dicha variable, se utiliza la variable de entorno process.env.PORT. Y si esta no está, se utiliza el puerto 8080.
+Para implementar la configuración distribuida he elegido etcd3, puesto que es el sistema más popular y dispone de una gran comunidad de usuarios, lo que facilita la resolución de problemas. En los ficheros de configuración primero se intenta obtener el número del puerto mediante etcd. Si no está presente dicha variable, se utiliza la variable de entorno process.env.PORT. Y si esta no está, se utiliza un puerto por defecto que es distinto en cada microservicio (usuarios - 9000, administradores de tiendas - 9001, tiendas - 9002 y opiniones - 9003).
 
 ### Logs
 
