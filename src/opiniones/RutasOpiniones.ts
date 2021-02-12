@@ -15,13 +15,13 @@ var controlador: ControladorOpiniones = new ControladorOpiniones();
 router.post('/tiendas/:tienda/opiniones', function (req, res) {
 	try{
 		var op: Opinion = controlador.publicarOpinion(req.body.nombreUsuario, req.params.tienda, req.body.titulo, req.body.valoracionNumerica, req.body.descripcion);
-		res.status(200).send(op);
+		res.status(201).send(op);
 	} catch (err) {
 		if (err instanceof ExcepcionValoracionNumericaIncorrecta){
 			res.status(400).send({"error": "Valoración numérica incorrecta"});
 		}
 		else{
-			res.status(500).send({"error": "Error no especificado"});
+			res.status(400).send({"error": "Error no especificado"});
 		}
 	}
 });
@@ -40,7 +40,7 @@ router.get('/tiendas/:tienda/valoracion-media', function(req, res) {
 			res.status(404).send({"error": "No existen opiniones sobre la tienda"});
 		}
 		else{
-			res.status(500).send({"error": "Error no especificado"});
+			res.status(400).send({"error": "Error no especificado"});
 		}
 	}
 });
@@ -58,13 +58,13 @@ router.delete('/tiendas/:tienda/opiniones/:id', function (req, res){
 router.put('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res) {
 	try{
 		var r: RespuestaOpinion = controlador.publicarRespuesta(req.params.tienda, req.params.id, req.body.contenido);
-		res.status(200).send(r);
+		res.status(201).send(r);
 	} catch (err) {
 		if (err instanceof ExcepcionOpinionNoExiste){
 			res.status(404).send({"error": "La opinión no existe"});
 		}
 		else{
-			res.status(500).send({"error": "Error no especificado"});
+			res.status(400).send({"error": "Error no especificado"});
 		}
 	}
 });
@@ -81,7 +81,7 @@ router.delete('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res){
 			res.status(404).send({"error": "La opinión no contiene una respuesta"});
 		}
 		else{
-			res.status(500).send({"error": "Error no especificado"});
+			res.status(400).send({"error": "Error no especificado"});
 		}
 	}
 

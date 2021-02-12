@@ -14,7 +14,7 @@ router.post('/administradores-tiendas', function (req, res) {
 	try{
 		var at: AdministradorTienda = new AdministradorTienda(req.body.nombreUsuario, req.body.correo, req.body.nombre, req.body.apellidos);
 		controlador.addAdministrador(at);
-		res.status(200).send(at);
+		res.status(201).send(at);
 	} catch (err) {
 		if (err instanceof ExcepcionNombreUsuarioIncorrecto){
 			res.status(400).send({"error": "Nombre de usuario incorrecto"});
@@ -23,10 +23,10 @@ router.post('/administradores-tiendas', function (req, res) {
 			res.status(400).send({"error": "Correo electrónico incorrecto"});
 		}
 		else if (err instanceof ExcepcionUsuarioYaExiste){
-			res.status(409).send({"error": "Ya existe un administrador con este nombre de usuario"});
+			res.status(400).send({"error": "Ya existe un administrador con este nombre de usuario"});
 		}
 		else{
-			res.status(500).send({"error": "Error no especificado"});
+			res.status(400).send({"error": "Error no especificado"});
 		}
 	}
 });

@@ -16,7 +16,7 @@ describe('Rutas de Opiniones', function(){
         .post('/tiendas/1/opiniones')
         .send(data)
         .expect('Content-Type', /json/)
-        .expect(200, done);
+        .expect(201, done);
     });
   
     it('Devuelve error si se intenta publicar una opinión con una valoración numérica incorrecta', function(done) {
@@ -56,7 +56,7 @@ describe('Rutas de Opiniones', function(){
         .post('/tiendas/4/opiniones')
         .send(data)
         .expect('Content-Type', /json/)
-        .expect(200)
+        .expect(201)
         .end(function(){
           request(app)
             .get('/tiendas/4/valoracion-media')
@@ -75,7 +75,7 @@ describe('Rutas de Opiniones', function(){
         .post('/tiendas/5/opiniones')
         .send(data)
         .expect('Content-Type', /json/)
-        .expect(200)
+        .expect(201)
         .end(function(){
           request(app)
             .delete('/tiendas/5/opiniones/0')
@@ -111,13 +111,13 @@ describe('Rutas de Opiniones', function(){
         .post('/tiendas/8/opiniones')
         .send(data1)
         .expect('Content-Type', /json/)
-        .expect(200)
+        .expect(201)
         .end(function(){
           request(app)
             .put('/tiendas/8/opiniones/0/respuesta')
             .send(data2)
             .expect('Content-Type', /json/)
-            .expect(200, done);
+            .expect(201, done);
         });
     });
   });
@@ -141,7 +141,7 @@ describe('Rutas de Opiniones', function(){
         .post('/tiendas/10/opiniones')
         .send(data1)
         .expect('Content-Type', /json/)
-        .expect(200)
+        .expect(201)
         .end(function(){
           request(app)
             .delete('/tiendas/10/opiniones/0/respuesta')
@@ -157,13 +157,13 @@ describe('Rutas de Opiniones', function(){
         .post('/tiendas/11/opiniones')
         .send(data1)
         .expect('Content-Type', /json/)
-        .expect(200)
+        .expect(201)
         .end(function(){
           request(app)
             .put('/tiendas/11/opiniones/0/respuesta')
             .send(data2)
             .expect('Content-Type', /json/)
-            .expect(200)
+            .expect(201)
             .end(function(){
               request(app)
                 .delete('/tiendas/11/opiniones/0/respuesta')

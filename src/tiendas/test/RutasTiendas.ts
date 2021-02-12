@@ -16,7 +16,7 @@ describe ('Rutas de Tiendas', function(){
         .post('/tiendas')
         .send(data)
         .expect('Content-Type', /json/)
-        .expect(200, done);
+        .expect(201, done);
     });
   
     it('Devuelve error cuando el número de teléfono es incorrecto', function(done) {

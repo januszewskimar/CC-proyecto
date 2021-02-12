@@ -16,7 +16,7 @@ describe ('Rutas de Usuarios', function(){
         .post('/usuarios')
         .send(data)
         .expect('Content-Type', /json/)
-        .expect(200, done);
+        .expect(201, done);
     });
   
     it('Devuelve error cuando se intenta crear un usuario con un nombre que ya está en uso', function(done) {
@@ -26,12 +26,12 @@ describe ('Rutas de Usuarios', function(){
         .post('/usuarios')
         .send(data1)
         .expect('Content-Type', /json/)
-        .expect(200).end(function(){
+        .expect(201).end(function(){
           request(app)
            .post('/usuarios')
            .send(data2)
            .expect('Content-Type', /json/)
-           .expect(409, done);});
+           .expect(400, done);});
     });
   
     it('Devuelve error cuando se intenta crear un usuario con un nombre de usuario incorrecto', function(done) {
