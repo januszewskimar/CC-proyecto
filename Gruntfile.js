@@ -11,17 +11,11 @@ module.exports = function (grunt) {
       }
     },
     run: {
-      usuarios: {
-        args: ['src/usuarios/ServidorUsuarios.js']
-      },
-      administradoresTiendas: {
-        args: ['src/administradores-tiendas/ServidorAdministradoresTiendas.js']
-      },
-      tiendas: {
-        args: ['src/tiendas/ServidorTiendas.js']
-      },
-      opiniones: {
-        args: ['src/opiniones/ServidorOpiniones.js']
+      default: {
+        options: {
+          itterable: true
+        },
+        args: ['src/index.js']
       }
     }
   });
@@ -33,8 +27,4 @@ module.exports = function (grunt) {
   grunt.registerTask("test", ["ts", 'mochaTest']);
   grunt.registerTask("build", ["ts"]);
   grunt.registerTask("install", []);
-  grunt.registerTask("run-usuarios", ["ts", "run:usuarios"]);
-  grunt.registerTask("run-administradores-tiendas", ["ts", "run:administradoresTiendas"]);
-  grunt.registerTask("run-tiendas", ["ts", "run:tiendas"]);
-  grunt.registerTask("run-opiniones", ["ts", "run:opiniones"]);
 };
