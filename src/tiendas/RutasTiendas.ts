@@ -3,12 +3,12 @@ import { Tienda } from "../entidades/Tienda";
 import { ControladorTiendas } from "./ControladorTiendas";
 import { ExcepcionTelefonoIncorrecto } from "../excepciones/ExcepcionTelefonoIncorrecto";
 
-var app = express();
-app.use(express.json());
+var router = express.Router();
+router.use(express.json());
 
 var controlador:ControladorTiendas = new ControladorTiendas();
 
-app.post('/tiendas', function (req, res) {
+router.post('/tiendas', function (req, res) {
 	try{
 		var t = new Tienda(req.body.nombre, req.body.direccion, req.body.telefono, req.body.administrador);
 		t = controlador.addTienda(t);
@@ -23,4 +23,4 @@ app.post('/tiendas', function (req, res) {
 	}
 });
 
-export default app;
+export default router;

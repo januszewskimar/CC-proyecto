@@ -1,6 +1,10 @@
 import 'mocha';
 import 'supertest';
-import app from '../RutasTiendas'; 
+import express = require('express');
+import router from '../RutasTiendas';
+
+var app = express();
+app.use(router);
 
 var request = require('supertest');
 

@@ -5,12 +5,12 @@ import { ExcepcionUsuarioYaExiste } from "../excepciones/ExcepcionUsuarioYaExist
 import { ExcepcionNombreUsuarioIncorrecto } from "../excepciones/ExcepcionNombreUsuarioIncorrecto";
 import { ExcepcionCorreoIncorrecto } from "../excepciones/ExcepcionCorreoIncorrecto";
 
-var app = express();
-app.use(express.json());
+var router = express.Router();
+router.use(express.json());
 
 var controlador:ControladorUsuarios = new ControladorUsuarios();
 
-app.post('/usuarios', function (req, res) {
+router.post('/usuarios', function (req, res) {
 	try{
 		var u: Usuario = new Usuario(req.body.nombreUsuario, req.body.correo, req.body.nombre, req.body.apellidos);
 		controlador.addUsuario(u);
@@ -31,4 +31,4 @@ app.post('/usuarios', function (req, res) {
 	}
 });
 
-export default app;
+export default router;

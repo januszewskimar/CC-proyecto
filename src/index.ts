@@ -2,7 +2,13 @@ const { Etcd3 } = require('etcd3');
 const client = new Etcd3();
 import winston = require('winston');
 import expressWinston = require('express-winston');
-import app from "./RutasAdministradoresTiendas";
+import express = require('express');
+import rutasUsuarios from './usuarios/RutasUsuarios';
+import rutasAdministradoresTiendas from './administradores-tiendas/RutasAdministradoresTiendas';
+import rutasTiendas from './tiendas/RutasTiendas';
+import rutasOpiniones from './opiniones/RutasOpiniones';
+
+var app = express();
 
 app.use(expressWinston.logger({
       transports: [
@@ -14,6 +20,11 @@ app.use(expressWinston.logger({
       )
 }));
 
+app.use(rutasUsuarios);
+app.use(rutasAdministradoresTiendas);
+app.use(rutasOpiniones);
+app.use(rutasTiendas);
+
 var puerto;
 
 (async() => {
@@ -21,7 +32,7 @@ var puerto;
 })().catch(() => {});
 	
 if (puerto == null){
-	puerto = process.env.PORT || 9001;
+	puerto = process.env.PORT || 8080;
 }
 
 app.listen(puerto);

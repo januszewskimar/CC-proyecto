@@ -5,12 +5,12 @@ import { ExcepcionUsuarioYaExiste } from "../excepciones/ExcepcionUsuarioYaExist
 import { ExcepcionNombreUsuarioIncorrecto } from "../excepciones/ExcepcionNombreUsuarioIncorrecto";
 import { ExcepcionCorreoIncorrecto } from "../excepciones/ExcepcionCorreoIncorrecto";
 
-var app = express();
-app.use(express.json());
+var router = express.Router();
+router.use(express.json());
 
 var controlador:ControladorAdministradoresTiendas = new ControladorAdministradoresTiendas();
 
-app.post('/administradores-tiendas', function (req, res) {
+router.post('/administradores-tiendas', function (req, res) {
 	try{
 		var at: AdministradorTienda = new AdministradorTienda(req.body.nombreUsuario, req.body.correo, req.body.nombre, req.body.apellidos);
 		controlador.addAdministrador(at);
@@ -31,4 +31,4 @@ app.post('/administradores-tiendas', function (req, res) {
 	}
 });
 
-export default app;
+export default router;

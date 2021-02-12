@@ -1,9 +1,12 @@
 import 'mocha';
 import 'supertest';
-import app from '../RutasOpiniones'; 
+import express = require('express');
+import router from '../RutasOpiniones'; 
+
+var app = express();
+app.use(router);
 
 var request = require('supertest');
-
 
 describe('Rutas de Opiniones', function(){
   describe('POST /tiendas/:tienda/opiniones', function() {

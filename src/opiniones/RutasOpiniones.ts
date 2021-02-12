@@ -7,12 +7,12 @@ import { ExcepcionNoHayOpiniones } from "../excepciones/ExcepcionNoHayOpiniones"
 import { ExcepcionOpinionNoExiste } from "../excepciones/ExcepcionOpinionNoExiste";
 import { ExcepcionRespuestaOpinionNoExiste } from "../excepciones/ExcepcionRespuestaOpinionNoExiste";
 
-var app = express();
-app.use(express.json());
+var router = express.Router();
+router.use(express.json());
 
 var controlador: ControladorOpiniones = new ControladorOpiniones();
 
-app.post('/tiendas/:tienda/opiniones', function (req, res) {
+router.post('/tiendas/:tienda/opiniones', function (req, res) {
 	try{
 		var op: Opinion = controlador.publicarOpinion(req.body.nombreUsuario, req.params.tienda, req.body.titulo, req.body.valoracionNumerica, req.body.descripcion);
 		res.status(200).send(op);
@@ -26,12 +26,12 @@ app.post('/tiendas/:tienda/opiniones', function (req, res) {
 	}
 });
 
-app.get('/tiendas/:tienda/opiniones', function (req, res) {
+router.get('/tiendas/:tienda/opiniones', function (req, res) {
 	var lista = controlador.getOpinionesTienda(req.params.tienda);
 	res.status(200).send(lista);
 });
 
-app.get('/tiendas/:tienda/valoracion-media', function(req, res) {
+router.get('/tiendas/:tienda/valoracion-media', function(req, res) {
 	try{
 		var resultado = controlador.getValoracionMediaTienda(req.params.tienda);
 		res.status(200).send({"valoracion-media": resultado});
@@ -45,7 +45,7 @@ app.get('/tiendas/:tienda/valoracion-media', function(req, res) {
 	}
 });
 
-app.delete('/tiendas/:tienda/opiniones/:id', function (req, res){
+router.delete('/tiendas/:tienda/opiniones/:id', function (req, res){
 	if (controlador.eliminarOpinion(req.params.tienda, req.params.id)){
 		res.status(200).send({"mensaje": "Opinión eliminada"});
 	}
@@ -55,7 +55,7 @@ app.delete('/tiendas/:tienda/opiniones/:id', function (req, res){
 
 });
 
-app.put('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res) {
+router.put('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res) {
 	try{
 		var r: RespuestaOpinion = controlador.publicarRespuesta(req.params.tienda, req.params.id, req.body.contenido);
 		res.status(200).send(r);
@@ -69,7 +69,7 @@ app.put('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res) {
 	}
 });
 
-app.delete('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res){
+router.delete('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res){
 	try{
 		controlador.eliminarRespuestaOpinion(req.params.tienda, req.params.id);
 		res.status(200).send({"mensaje:": "Respuesta eliminada"});
@@ -87,4 +87,4 @@ app.delete('/tiendas/:tienda/opiniones/:id/respuesta', function (req, res){
 
 });
 
-export default app;
+export default router;
