@@ -10,6 +10,12 @@ export class RespuestaOpinion{
 		this.contenido = contenido;
 	}
 	
+	static deserialize(datos){
+		var res = new RespuestaOpinion(new Date(datos['fechaCreacion']), datos['contenido']);
+		res.setFechaEdicion(new Date(datos['fechaEdicion']));
+		return res;
+	}
+	
 	getFechaCreacion(){
 		return this.fechaCreacion;
 	}

@@ -1,12 +1,14 @@
 import 'mocha';
 import 'supertest';
 import express = require('express');
-import router from '../RutasAdministradoresTiendas';
+import { getRutas } from '../RutasAdministradoresTiendas';
 
 var app = express();
+var router = getRutas(null);
 app.use(router);
 
 var request = require('supertest');
+
 
 describe ('Rutas de Administradores de Tiendas', function(){
   describe('POST /administradores-tiendas', function() {

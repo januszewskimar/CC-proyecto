@@ -23,6 +23,22 @@ export class Opinion{
 		this.descripcion = descripcion;
 	}
 	
+	static deserialize(datos): Opinion{
+		let op = new Opinion (datos['tienda'], new Date(datos['fechaCreacion']), datos['usuario'], datos['titulo'], datos['valoracionNumerica'], datos['descripcion']);
+		op.setId(datos['id']);
+		if ( 'respuesta' in datos ){
+			if (datos['respuesta'] != null){
+				op.setRespuesta(RespuestaOpinion.deserialize(datos['respuesta']));
+			}
+		}
+		if ( 'fechaEdicion' in datos ){
+			if (datos['respuesta'] != null){
+				op.setFechaEdicion(new Date(datos['fechaEdicion']));
+			}
+		}
+		return op;
+	}
+	
 	getId() : number{
 		return this.id;
 	}
