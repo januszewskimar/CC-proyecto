@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  servicio:
+    container_name: servicio
+    build:
+      context: .
+      dockerfile: servicio.Dockerfile
+    depends_on:
+      - mongodb
+      - logstash
+    environment:
+      - WAIT_HOSTS=mongodb:27017, logstash:8081
+      - HOST_BD=${HOST_BD}
+      - USUARIO_BD=${USUARIO_BD}
+      - CONTRASENIA_BD=${CONTRASENIA_BD}
+      - NOMBRE_BD=${NOMBRE_BD}
+      - PUERTO_SERVICIO=${PUERTO_SERVICIO}
+      - PUERTO_LOGSTASH=${PUERTO_LOGSTASH}
+    ports:
+      - ${PUERTO_SERVICIO}:8080
+    networks:
+      - red
+    volumes:
+      - ./src:/shop-safe/src
+  
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${USUARIO_BD}
+      - MONGO_INITDB_ROOT_PASSWORD=${CONTRASENIA_BD}
+    networks:
+      - red
+      
+  logstash:
+    image: bitnami/logstash:latest
+    container_name: logstash
+    environment:
+      - LOGSTASH_CONF_STRING=${CONFIG_LOGSTASH}
+    networks:
+      - red
+
+
+
+networks:
+  red:
+    driver: bridge
