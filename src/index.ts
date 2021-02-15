@@ -40,7 +40,7 @@ app.use(expressWinston.logger({
 	} catch(err){ console.log(err); }
 
 	if (usuarioBD == null){
-		usuarioBD = process.env.URIBD || 'admin' ;
+		usuarioBD = process.env.USUARIO_BD || 'admin' ;
 	}
 
 
@@ -63,11 +63,11 @@ app.use(expressWinston.logger({
 	var nombrebd;
 
 	try{
-		nombrebd = await client.get('nombrebd').string();
+		nombrebd = await client.get('NOMBRE_BD').string();
 	} catch(err){ console.log(err); }
 
 	if (nombrebd == null){
-		nombrebd = process.env.NOMBREBD || "ShopSafe" ;
+		nombrebd = process.env.NOMBRE_BD || "ShopSafe" ;
 	}
 
 	var baseDatos = cliente.db(nombrebd);
@@ -86,11 +86,11 @@ app.use(expressWinston.logger({
 	var puerto;
 
 	try{
-		puerto = await client.get('puerto').string();
+		puerto = await client.get('PUERTO_SERVICIO').string();
 	} catch(err){ console.log(err); }
 
 	if (puerto == null){
-		puerto = process.env.PORT || 8080;
+		puerto = process.env.PUERTO_SERVICIO || 8080;
 	}
 
 	try{
