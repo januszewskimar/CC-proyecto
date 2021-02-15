@@ -1,8 +1,8 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 LABEL maintainer="Marcin Januszewski <januszewskimar@gmail.com>"
 
-# source: https://github.com/nodejs/docker-node/blob/41ea0562287bbf98693572c9228edc1beb7fd709/15/alpine3.11/Dockerfile
+# source: https://github.com/nodejs/docker-node/blob/41ea0562287bbf98693572c9228edc1beb7fd709/15/alpine3.12/Dockerfile
 ENV NODE_VERSION 15.2.1
 
 RUN addgroup -g 1000 node \
@@ -77,12 +77,14 @@ WORKDIR /shop-safe
 
 COPY package.json package-lock.json Gruntfile.js  /shop-safe/
 
-RUN npm install -g grunt-cli && chown -R node /shop-safe
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
+
+RUN npm install -g grunt-cli && chown -R node /shop-safe && chmod +x /wait
 
 USER node
 
 RUN npm ci
 
-EXPOSE 9000
+EXPOSE 8080
     
-CMD ["grunt", "run-usuarios"]
+CMD grunt build && /wait && grunt run
