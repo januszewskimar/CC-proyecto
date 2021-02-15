@@ -21,10 +21,13 @@
   "homepage": "https://github.com/januszewskimar/shop-safe#readme",
   "dependencies": {
     "@types/jest": "^26.0.15",
+    "@types/mongodb": "^3.6.7",
+    "chai-as-promised": "^7.1.1",
     "etcd3": "^1.1.0",
     "express": "^4.17.1",
     "express-winston": "^4.0.5",
     "grunt-ts": "^6.0.0-beta.22",
+    "mongodb": "^3.6.3",
     "winston": "^3.3.3"
   },
   "devDependencies": {
