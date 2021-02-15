@@ -22,13 +22,14 @@ app.use(expressWinston.logger({
 }));
 
 (async() => {
-
 	var uri;
 
-	uri = await client.get('uribd').string();
+	try{
+		uri = await client.get('uribd').string();
+	} catch(err){ console.log(err); }
 
 	if (uri == null){
-		uri = process.env.URIBD || "mongodb://admin:pass@mongodb?retryWrites=true&writeConcern=majority" ;
+		uri = process.env.URIBD || "mongodb://admin:pass@localhost?retryWrites=true&writeConcern=majority" ;
 	}
 
 	const cliente = new MongoClient(uri, { useUnifiedTopology: true });
@@ -37,7 +38,9 @@ app.use(expressWinston.logger({
 
 	var nombrebd;
 
-	nombrebd = await client.get('nombrebd').string();
+	try{
+		nombrebd = await client.get('nombrebd').string();
+	} catch(err){ console.log(err); }
 
 	if (nombrebd == null){
 		nombrebd = process.env.NOMBREBD || "ShopSafe" ;
@@ -58,12 +61,17 @@ app.use(expressWinston.logger({
 
 	var puerto;
 
-	puerto = await client.get('puerto').string();
+	try{
+		puerto = await client.get('puerto').string();
+	} catch(err){ console.log(err); }
 
 	if (puerto == null){
 		puerto = process.env.PORT || 8080;
 	}
 
-	app.listen(puerto);
+	try{
+		app.listen(puerto);
+	} catch(err) { console.log(err); }
+
 	console.log('Escuchando en http://127.0.0.1:' + puerto + '/');
-})().catch((err) => { console.log(err); });
+})()
