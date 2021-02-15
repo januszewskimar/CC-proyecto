@@ -22,16 +22,40 @@ app.use(expressWinston.logger({
 }));
 
 (async() => {
-	var uri;
+	var hostBD;
 
 	try{
-		uri = await client.get('uribd').string();
+		hostBD = await client.get('HOST_BD').string();
 	} catch(err){ console.log(err); }
 
-	if (uri == null){
-		uri = process.env.URIBD || "mongodb://admin:pass@localhost?retryWrites=true&writeConcern=majority" ;
+	if (hostBD == null){
+		hostBD = process.env.HOST_BD || 'localhost' ;
 	}
 
+
+	var usuarioBD;
+	
+	try{
+		usuarioBD = await client.get('USUARIO_BD').string();
+	} catch(err){ console.log(err); }
+
+	if (usuarioBD == null){
+		usuarioBD = process.env.URIBD || 'admin' ;
+	}
+
+
+	var contraseniaBD;
+	
+	try{
+		contraseniaBD = await client.get('CONTRASENIA_BD').string();
+	} catch(err){ console.log(err); }
+
+	if (contraseniaBD == null){
+		contraseniaBD = process.env.CONTRASENIA_BD || 'pass' ;
+	}
+
+
+	var uri = 'mongodb://' + usuarioBD + ':' + contraseniaBD + '@' + hostBD + '?retryWrites=true&writeConcern=majority' ;
 	const cliente = new MongoClient(uri, { useUnifiedTopology: true });
 	await cliente.connect();
 
