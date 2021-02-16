@@ -6,7 +6,6 @@ const expect = chai.expect;
 import { ControladorTiendas } from '../ControladorTiendas';
 import { Tienda } from '../../entidades/Tienda';
 import { ExcepcionTelefonoIncorrecto } from '../../excepciones/ExcepcionTelefonoIncorrecto';
-import { expect } from 'chai';
 
 describe('ControladorTiendas', function(){
 	describe('Carga', function(){

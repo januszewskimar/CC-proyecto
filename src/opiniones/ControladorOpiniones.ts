@@ -60,7 +60,7 @@ export class ControladorOpiniones{
 			if (res){
 				var r;
 				var op = Opinion.deserialize(res);
-				if (op.tieneRespuesta){
+				if (op.tieneRespuesta()){
 					op.getRespuesta().setContenido(contenido);
 					r = op.getRespuesta();
 				}
@@ -124,16 +124,16 @@ export class ControladorOpiniones{
 		}
 		else{
 			var res = await this.coleccion.find( { "tienda": t } ).toArray();
-			
 			if (res.length == 0){
 				throw new ExcepcionNoHayOpiniones();
 			}
 			else{
 				let suma = 0;
 				for (let i = 0 ; i < res.length ; i++){
-					suma += parseInt(res[i]['valoracionNumerica']);
+					var op = Opinion.deserialize(res[i]);
+					suma += op.getValoracionNumerica();
 				}
-				
+
 				return suma / res.length;
 			}
 		}

@@ -6,8 +6,11 @@ module.exports = function (grunt) {
       },
     },
     mochaTest: {
-      test: {
-        src: ['src/**/test/*.js']
+      default: {
+        src: ['src/**/test/*.js', '!src/test/Composicion.js']
+      },
+      composicion: {
+        src: ['src/test/Composicion.js']
       }
     },
     run: {
@@ -16,15 +19,16 @@ module.exports = function (grunt) {
           itterable: true
         },
         args: ['src/index.js']
-      }
-    }
+      },
+    },
   });
   grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-run');
   
-  grunt.registerTask("default", ["ts", 'mochaTest']);
-  grunt.registerTask("test", ["ts", 'mochaTest']);
+  grunt.registerTask("default", ["ts", 'mochaTest:default']);
+  grunt.registerTask("test", ["ts", 'mochaTest:default']);
+  grunt.registerTask("test-composicion", ["ts", 'mochaTest:composicion']);
   grunt.registerTask("build", ["ts"]);
   grunt.registerTask("install", []);
 };

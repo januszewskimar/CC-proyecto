@@ -33,7 +33,8 @@ describe('ControladorOpiniones', function(){
 			let resultado: Opinion[] = await controlador.getOpinionesTienda(1);
 			
 			expect(resultado).to.have.lengthOf(2);
-			expect(resultado).to.include(op1, op3);
+			chai.expect(resultado).to.include(op1);
+			chai.expect(resultado).to.include(op3);
 		})
 	})
 	
@@ -89,7 +90,8 @@ describe('ControladorOpiniones', function(){
 			
 			resultado = await controlador.getOpinionesTienda(1);
 			expect(resultado).to.have.lengthOf(2);
-			expect(resultado).to.include(op1, op3);
+			expect(resultado).to.include(op1);
+			expect(resultado).to.include(op3);
 		})
 		
 		it('No elimina opiniones si se indica una combinación de tienda e identificador inexistentes', async function(){
@@ -109,11 +111,13 @@ describe('ControladorOpiniones', function(){
 			
 			let resultado: Opinion[] = await controlador.getOpinionesTienda(2);
 			expect(resultado).to.have.lengthOf(2);
-			expect(resultado).to.include(op2, op4);
+			expect(resultado).to.include(op2);
+			expect(resultado).to.include(op4);
 			
 			resultado = await controlador.getOpinionesTienda(1);
 			expect(resultado).to.have.lengthOf(2);
-			expect(resultado).to.include(op1, op3);
+			expect(resultado).to.include(op1);
+			expect(resultado).to.include(op3);
 		})
 	})
 	

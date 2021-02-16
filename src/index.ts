@@ -11,6 +11,7 @@ import { getRutas as getRutasOpiniones } from './opiniones/RutasOpiniones';
 
 var app = express();
 
+
 app.use(expressWinston.logger({
       transports: [
 	new winston.transports.Console()
@@ -21,6 +22,7 @@ app.use(expressWinston.logger({
       )
 }));
 
+
 (async() => {
 	var hostBD;
 
@@ -29,7 +31,7 @@ app.use(expressWinston.logger({
 	} catch(err){ console.log(err); }
 
 	if (hostBD == null){
-		hostBD = process.env.HOST_BD || 'localhost' ;
+		hostBD = process.env.HOST_BD || 'mongodb' ;
 	}
 
 
@@ -56,6 +58,7 @@ app.use(expressWinston.logger({
 
 
 	var uri = 'mongodb://' + usuarioBD + ':' + contraseniaBD + '@' + hostBD + '?retryWrites=true&writeConcern=majority' ;
+	console.log(uri);
 	const cliente = new MongoClient(uri, { useUnifiedTopology: true });
 	await cliente.connect();
 
@@ -98,4 +101,4 @@ app.use(expressWinston.logger({
 	} catch(err) { console.log(err); }
 
 	console.log('Escuchando en http://127.0.0.1:' + puerto + '/');
-})()
+})().catch(err => {  console.log(err); });
