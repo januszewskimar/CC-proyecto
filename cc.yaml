@@ -17,17 +17,14 @@ entidad:
   - src/excepciones/ExcepcionValoracionNumericaIncorrecta.ts
   - src/usuarios/ControladorUsuarios.ts
   - src/usuarios/RutasUsuarios.ts
-  - src/usuarios/ServidorUsuarios.ts
   - src/administradores-tiendas/ControladorAdministradoresTiendas.ts
   - src/administradores-tiendas/RutasAdministradoresTiendas.ts
-  - src/administradores-tiendas/ServidorAdministradoresTiendas.ts
   - src/tiendas/ControladorTiendas.ts
   - src/tiendas/RutasTiendas.ts
-  - src/tiendas/ServidorTiendas.ts
   - src/opiniones/ControladorOpiniones.ts
   - src/opiniones/RutasOpiniones.ts
-  - src/opiniones/ServidorOpiniones.ts
 test:
+  - src/test/Composicion.ts
   - src/entidades/test/AdministradorTienda.ts
   - src/entidades/test/Opinion.ts
   - src/entidades/test/RespuestaOpinion.ts
